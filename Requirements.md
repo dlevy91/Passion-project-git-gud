@@ -8,7 +8,7 @@ This project is a way for users to share information that they want to with othe
   <thead>
     <tr>
       <th scope="col">Model</th>
-    </tr>
+
   </thead>
   <tbody>
     <tr>
