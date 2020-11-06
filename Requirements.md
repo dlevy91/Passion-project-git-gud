@@ -30,6 +30,8 @@ This project is a way for users to share information that they want to with othe
       <td>list Admin Favorites </td>
       <td>list Admin Messages </td>
       <td>list Admin Notifications </td>
+      <td>list Post Queue</td>
+      
     </tr>
   </tbody>
 </table>
