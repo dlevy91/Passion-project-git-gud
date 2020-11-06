@@ -1,5 +1,39 @@
 # <i>Requirements Doc</i>
 
+# Project Summary
+This project is a way for users to share information that they want to with other users. Each user can submit their own ideas with step by step instructions and photos on how to do said thing. Users can also message the OP to get clarification if they don't understand a step, they can also search posts based on project title or tags that the OP used when making their post. Admin will approve posts and if anything is off they will mark it as a "needs to be revised" before it gets posted to the public.
+
+# Models
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">User</th>
+      <td>int ID</td>
+      <td>string User Email</td>
+      <td>string User screen name</td>
+      <td>string User Posts</td>
+      <td>list User Favorites </td>
+      <td>list User Messages </td>
+      <td>list User Notifications </td>
+    </tr>
+    <tr>
+      <th scope="row">Admin</th>
+      <td>int ID</td>
+      <td>string Admin Email</td>
+      <td>string Admin screen name</td>
+      <td>string Admin Posts</td>
+      <td>list Admin Favorites </td>
+      <td>list Admin Messages </td>
+      <td>list Admin Notifications </td>
+    </tr>
+  </tbody>
+</table>
+
 # Admin
 <ul>
     <li>Admin must approve a post before it is published</li>
@@ -17,5 +51,5 @@
     <li>If users post is flagged should get a warning and told they need to update their post</li>
 </ul>
 
-Link to Google doc API
+# Link to Google doc API
 https://developers.google.com/drive/api/v3/quickstart/js#python-3.x
