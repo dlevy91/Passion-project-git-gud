@@ -8,7 +8,7 @@ This project is a way for users to share information that they want to with othe
   <thead>
     <tr>
       <th scope="col">Model</th>
-
+    </tr>
   </thead>
   <tbody>
     <tr>
@@ -20,6 +20,7 @@ This project is a way for users to share information that they want to with othe
       <td>list User Favorites </td>
       <td>list User Messages </td>
       <td>list User Notifications </td>
+      <td>list AdminWarning </td>
     </tr>
     <tr>
       <th scope="row">Admin</th>
