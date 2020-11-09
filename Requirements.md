@@ -81,4 +81,4 @@ This project is a way for users to share information that they want to with othe
 </ul>
 
 # Link to Google doc API
-https://developers.google.com/drive/api/v3/quickstart/js#python-3.x
+https://developers.google.com/drive/api/v3/quickstart/dotnet
