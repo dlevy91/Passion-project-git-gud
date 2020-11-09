@@ -31,9 +31,35 @@ This project is a way for users to share information that they want to with othe
       <td>list Admin Favorites </td>
       <td>list Admin Messages </td>
       <td>list Admin Notifications </td>
-      <td>list Post Queue</td>
-      
+      <td>list Post Queue</td>      
     </tr>
+    <tr>
+      <th scope="row">Favorites</th>
+      <td>int ID</td>
+      <td>string user Email</td>
+      <td>bool userFav</td>    
+    </tr>
+    <tr>
+      <th scope="row">Messages</th>
+      <td>int ID</td>
+      <td>string User Email</td>
+      <td>string Recipient Email</td>
+      <td>string text body</td>   
+    </tr>
+    <tr>
+      <th scope="row">Notifications</th>
+      <td>int ID</td>
+      <td>string User Email</td>
+      <td>bool isUrgent</td>  
+      <td>string notification text</td>
+    </tr>
+    <tr>
+      <th scope="row">PostQueue</th>
+      <td>int ID</td>
+      <td>string Author Email</td>
+      <td>string post body</td>
+    </tr>
+    
   </tbody>
 </table>
 
