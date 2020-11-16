@@ -328,10 +328,68 @@
 					"response": []
 				},
 				{
+					"name": "AddNotification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "userEmail",
+									"value": "frankcastle@icloud.com",
+									"type": "text"
+								},
+								{
+									"key": "isUrgent",
+									"value": "False",
+									"type": "text"
+								},
+								{
+									"key": "notificationText",
+									"value": "Made a new post part 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/addnotif",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"addnotif"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "DeleteNotification",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "notifID",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
 						"url": {
 							"raw": "https://localhost:5001/gitgud/deletenotif",
 							"protocol": "https",
@@ -383,7 +441,7 @@
 							"urlencoded": [
 								{
 									"key": "id",
-									"value": "1",
+									"value": "2",
 									"type": "text"
 								},
 								{
@@ -393,7 +451,7 @@
 								},
 								{
 									"key": "postBody",
-									"value": "This is a test part 1",
+									"value": "This is a test part 2",
 									"type": "text"
 								}
 							]
@@ -408,6 +466,39 @@
 							"path": [
 								"gitgud",
 								"addqueue"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePostQueue",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "QueueID",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/deletequeue",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"deletequeue"
 							]
 						}
 					},
