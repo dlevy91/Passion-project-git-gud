@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using gitgudclone.Data;
 
-namespace gitgudclone.Data.Migrations
+namespace gitgudclone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -352,8 +352,8 @@ namespace gitgudclone.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("postBody")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("postBody")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("id");
 

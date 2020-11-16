@@ -9,6 +9,6 @@ namespace gitgudclone.Models
         [Key]
         public int id {get; set;}
 
-        public int postBody {get; set;}
+        public string postBody {get; set;}
     }
 }

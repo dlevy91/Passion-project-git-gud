@@ -40,20 +40,22 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Posts=============================
 
+        [HttpPost]
         public IActionResult AddPost(PostsModel newPost)
         {
             // return Content("Add Post");
-            if(ModelState.IsValid)
-            {
+            // if(ModelState.IsValid)
+            // {
             _context.postsList.Add(newPost);
             _context.SaveChanges();
             return Content("Post Added");
-            }
-            else{
-                return Content("Not Valid");
-            }
+            // }
+            // else{
+            //     return Content("Not Valid");
+            // }
         }
 
+        [HttpPost]
         public IActionResult EditPost(PostsModel upPost)
         {
 
@@ -101,18 +103,19 @@ namespace Passion_project_git_gud.Controllers
             return View(foundMessage);
         }
 
+        [HttpPost]
         public IActionResult AddMessage(MessagesModel newMessage)
         {
             // return Content("Add Message");
-            if(ModelState.IsValid)
-            {
+            // if(ModelState.IsValid)
+            // {
             _context.messagesList.Add(newMessage);
             _context.SaveChanges();
             return Content("Message Added");
-            }
-            else{
-               return Content("Not valid Message");
-            }
+            // }
+            // else{
+            //    return Content("Not valid Message");
+            // }
         }
 
         public IActionResult DeleteMessage(int messageID)
@@ -170,7 +173,8 @@ namespace Passion_project_git_gud.Controllers
             return View(_context.postQueueList);
         }
 
-    public IActionResult AddQueue(PostQueueModel newQueue)
+        [HttpPost]
+        public IActionResult AddQueue(PostQueueModel newQueue)
         {
             // return Content("Add Post to Queue");
 

@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using gitgudclone.Data;
 
-namespace gitgudclone.Data.Migrations
+namespace gitgudclone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201113204041_init")]
+    [Migration("20201116162206_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -354,8 +354,8 @@ namespace gitgudclone.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("postBody")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("postBody")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("id");
 
