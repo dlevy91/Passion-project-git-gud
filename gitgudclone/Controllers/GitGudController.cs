@@ -149,6 +149,20 @@ namespace Passion_project_git_gud.Controllers
             return View(foundNotif);
         }
 
+        [HttpPost]
+        public IActionResult AddNotif(NotificationsModel newNotification)
+        {
+            // if(ModelState.IsValid)
+            // {
+            _context.notificationsList.Add(newNotification);
+            _context.SaveChanges();
+            return Content("Notification Added");
+            // }
+            // else{
+            //    return Content("Not valid Notification");
+            // }
+        }
+
         public IActionResult DeleteNotif(int notifID)
         {
             // return Content("Delete Notification");
@@ -188,5 +202,21 @@ namespace Passion_project_git_gud.Controllers
                 return Content("Not Valid Post");
             }
         }
+
+        public IActionResult DeleteQueue(int QueueID)
+        {
+            PostQueueModel foundPost = _context.postQueueList.FirstOrDefault(q => q.id == QueueID);
+
+            if(foundPost != null)
+            {
+            _context.Remove(foundPost);
+            _context.SaveChanges();
+            return Content("Post in Queue Deleted");
+            }
+            else{
+               return Content("Post in Queue not found");
+            }
+        }
+
     }
 }
