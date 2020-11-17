@@ -2,10 +2,10 @@
 
 # TODO List for the week
 
-Use sources found in preliminary search to create method to export PDF
-
-Research implementation of API for connection to Google Drive to export PDF
-
-Research different ways to implement search function based on title or tags of of entries
-
-Research implementation of users being able to direct message other users from their posts and to receive responses
+<ul>
+  <li>Create partial views</li>
+  <li>Create Views</li>
+  <li>Update controller methods to work with views</li>
+  <li>Implement PDF export</li>
+  <li>Research how to implement image upload for user posts</li>
+</ul>
