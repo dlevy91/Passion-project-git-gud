@@ -18,8 +18,6 @@ namespace gitgudclone.Data
 
         public DbSet<NotificationsModel> notificationsList {get; set;}
 
-        public DbSet<PostQueueModel> postQueueList {get; set;}
-
         public DbSet<UserModel> userList {get; set;}
 
         public DbSet<PostsModel> postsList {get; set;}

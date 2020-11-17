@@ -53,8 +53,7 @@ namespace gitgudclone.Migrations
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     userEmail = table.Column<string>(type: "TEXT", nullable: true),
-                    userScreenName = table.Column<string>(type: "TEXT", nullable: true),
-                    userPost = table.Column<string>(type: "TEXT", nullable: true)
+                    userScreenName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -212,35 +211,15 @@ namespace gitgudclone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "postQueueList",
-                columns: table => new
-                {
-                    id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    authorEmail = table.Column<string>(type: "TEXT", nullable: true),
-                    postBody = table.Column<string>(type: "TEXT", nullable: false),
-                    UserModelid = table.Column<int>(type: "INTEGER", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_postQueueList", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_postQueueList_userList_UserModelid",
-                        column: x => x.UserModelid,
-                        principalTable: "userList",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "postsList",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     postBody = table.Column<string>(type: "TEXT", nullable: false),
-                    favorite = table.Column<bool>(type: "INTEGER", nullable: false),
-                    UserModelid = table.Column<int>(type: "INTEGER", nullable: true)
+                    isApproved = table.Column<bool>(type: "INTEGER", nullable: false),
+                    UserModelid = table.Column<int>(type: "INTEGER", nullable: true),
+                    UserModelid1 = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -248,6 +227,12 @@ namespace gitgudclone.Migrations
                     table.ForeignKey(
                         name: "FK_postsList_userList_UserModelid",
                         column: x => x.UserModelid,
+                        principalTable: "userList",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_postsList_userList_UserModelid1",
+                        column: x => x.UserModelid1,
                         principalTable: "userList",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
@@ -301,14 +286,14 @@ namespace gitgudclone.Migrations
                 column: "UserModelid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_postQueueList_UserModelid",
-                table: "postQueueList",
-                column: "UserModelid");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_postsList_UserModelid",
                 table: "postsList",
                 column: "UserModelid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_postsList_UserModelid1",
+                table: "postsList",
+                column: "UserModelid1");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -333,9 +318,6 @@ namespace gitgudclone.Migrations
 
             migrationBuilder.DropTable(
                 name: "notificationsList");
-
-            migrationBuilder.DropTable(
-                name: "postQueueList");
 
             migrationBuilder.DropTable(
                 name: "postsList");

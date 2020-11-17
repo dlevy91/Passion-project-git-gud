@@ -16,8 +16,7 @@ namespace gitgudclone.Models
         [Display(Name = "Screen Name")]
         public string userScreenName {get; set;}
 
-        [Display(Name = "Post")]
-        public string userPost {get; set;}
+        public List<PostsModel> userPost {get; set;}
 
         public List<PostsModel> userFavorites {get; set;}
 
@@ -25,6 +24,5 @@ namespace gitgudclone.Models
 
         public List<NotificationsModel> userNotifications {get; set;}
 
-        public List<PostQueueModel> postQueue {get; set;}
     }
 }

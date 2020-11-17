@@ -179,44 +179,5 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
-        //====================Post Queue==============================
-
-        public IActionResult ViewQueue()
-        {
-            // return Content("View Queue");
-            return View(_context.postQueueList);
-        }
-
-        [HttpPost]
-        public IActionResult AddQueue(PostQueueModel newQueue)
-        {
-            // return Content("Add Post to Queue");
-
-            if(ModelState.IsValid)
-            {
-            _context.postQueueList.Add(newQueue);
-            _context.SaveChanges();
-            return Content("Post Added to Queue");
-            }
-            else{
-                return Content("Not Valid Post");
-            }
-        }
-
-        public IActionResult DeleteQueue(int QueueID)
-        {
-            PostQueueModel foundPost = _context.postQueueList.FirstOrDefault(q => q.id == QueueID);
-
-            if(foundPost != null)
-            {
-            _context.Remove(foundPost);
-            _context.SaveChanges();
-            return Content("Post in Queue Deleted");
-            }
-            else{
-               return Content("Post in Queue not found");
-            }
-        }
-
     }
 }

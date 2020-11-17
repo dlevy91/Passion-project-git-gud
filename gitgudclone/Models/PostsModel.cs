@@ -12,6 +12,6 @@ namespace gitgudclone.Models
         [Required]
         public string postBody {get; set;}
 
-        public bool favorite {get; set;}
+        public bool isApproved {get; set;}
     }
 }

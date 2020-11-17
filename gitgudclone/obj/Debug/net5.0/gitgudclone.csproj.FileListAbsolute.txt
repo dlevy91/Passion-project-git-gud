@@ -388,3 +388,9 @@ C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\De
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\gitgudclone.pdb
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\gitgudclone.genruntimeconfig.cache
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\GitGud Passion Project.postman_collection.json
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_messagesDisplay.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_messagesForm.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_notificationsDisplay.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_notificationsForm.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_postsDisplay.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_postsForm.cshtml.g.cs

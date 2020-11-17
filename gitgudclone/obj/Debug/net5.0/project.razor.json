@@ -15608,11 +15608,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_queueDisplay.cshtml",
-      "TargetPath": "Views\\GitGud\\_queueDisplay.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_messagesDisplay.cshtml",
       "TargetPath": "Views\\GitGud\\_messagesDisplay.cshtml",
       "FileKind": "mvc"
@@ -15635,11 +15630,6 @@
     {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_notificationsForm.cshtml",
       "TargetPath": "Views\\GitGud\\_notificationsForm.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_queueForm.cshtml",
-      "TargetPath": "Views\\GitGud\\_queueForm.cshtml",
       "FileKind": "mvc"
     },
     {

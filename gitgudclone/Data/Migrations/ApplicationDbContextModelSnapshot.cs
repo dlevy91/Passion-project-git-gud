@@ -263,29 +263,6 @@ namespace gitgudclone.Migrations
                     b.ToTable("notificationsList");
                 });
 
-            modelBuilder.Entity("gitgudclone.Models.PostQueueModel", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("UserModelid")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("authorEmail")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("postBody")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("UserModelid");
-
-                    b.ToTable("postQueueList");
-                });
-
             modelBuilder.Entity("gitgudclone.Models.PostsModel", b =>
                 {
                     b.Property<int>("id")
@@ -295,7 +272,10 @@ namespace gitgudclone.Migrations
                     b.Property<int?>("UserModelid")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("favorite")
+                    b.Property<int?>("UserModelid1")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("isApproved")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("postBody")
@@ -305,6 +285,8 @@ namespace gitgudclone.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("UserModelid");
+
+                    b.HasIndex("UserModelid1");
 
                     b.ToTable("postsList");
                 });
@@ -316,9 +298,6 @@ namespace gitgudclone.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("userEmail")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("userPost")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("userScreenName")
@@ -394,29 +373,26 @@ namespace gitgudclone.Migrations
                         .HasForeignKey("UserModelid");
                 });
 
-            modelBuilder.Entity("gitgudclone.Models.PostQueueModel", b =>
-                {
-                    b.HasOne("gitgudclone.Models.UserModel", null)
-                        .WithMany("postQueue")
-                        .HasForeignKey("UserModelid");
-                });
-
             modelBuilder.Entity("gitgudclone.Models.PostsModel", b =>
                 {
                     b.HasOne("gitgudclone.Models.UserModel", null)
                         .WithMany("userFavorites")
                         .HasForeignKey("UserModelid");
+
+                    b.HasOne("gitgudclone.Models.UserModel", null)
+                        .WithMany("userPost")
+                        .HasForeignKey("UserModelid1");
                 });
 
             modelBuilder.Entity("gitgudclone.Models.UserModel", b =>
                 {
-                    b.Navigation("postQueue");
-
                     b.Navigation("userFavorites");
 
                     b.Navigation("userMessages");
 
                     b.Navigation("userNotifications");
+
+                    b.Navigation("userPost");
                 });
 #pragma warning restore 612, 618
         }
