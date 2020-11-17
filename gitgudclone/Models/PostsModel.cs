@@ -9,6 +9,9 @@ namespace gitgudclone.Models
         [Key]
         public int id {get; set;}
 
+        [Required]
         public string postBody {get; set;}
+
+        public bool favorite {get; set;}
     }
 }

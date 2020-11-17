@@ -12,6 +12,7 @@ namespace gitgudclone.Models
 
         public string recipientEmail {get; set;}
 
+        [Required]
         public string textBody {get; set;}
     }
 }

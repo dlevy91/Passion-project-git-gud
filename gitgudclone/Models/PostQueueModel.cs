@@ -10,6 +10,7 @@ namespace gitgudclone.Models
 
         public string authorEmail {get; set;}
 
+        [Required]
         public string postBody {get; set;}
     }
 }

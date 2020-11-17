@@ -212,60 +212,10 @@ namespace gitgudclone.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("gitgudclone.Models.AdminModel", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("adminEmail")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("adminPost")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("adminScreenName")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("adminList");
-                });
-
-            modelBuilder.Entity("gitgudclone.Models.FavoritesModel", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("AdminModelid")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("UserModelid")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("userEmail")
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("userFav")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("AdminModelid");
-
-                    b.HasIndex("UserModelid");
-
-                    b.ToTable("favoriteList");
-                });
-
             modelBuilder.Entity("gitgudclone.Models.MessagesModel", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("AdminModelid")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("UserModelid")
@@ -275,14 +225,13 @@ namespace gitgudclone.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("textBody")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("userEmail")
                         .HasColumnType("TEXT");
 
                     b.HasKey("id");
-
-                    b.HasIndex("AdminModelid");
 
                     b.HasIndex("UserModelid");
 
@@ -293,9 +242,6 @@ namespace gitgudclone.Migrations
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("AdminModelid")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("UserModelid")
@@ -312,8 +258,6 @@ namespace gitgudclone.Migrations
 
                     b.HasKey("id");
 
-                    b.HasIndex("AdminModelid");
-
                     b.HasIndex("UserModelid");
 
                     b.ToTable("notificationsList");
@@ -325,9 +269,6 @@ namespace gitgudclone.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("AdminModelid")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int?>("UserModelid")
                         .HasColumnType("INTEGER");
 
@@ -335,11 +276,10 @@ namespace gitgudclone.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("postBody")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("id");
-
-                    b.HasIndex("AdminModelid");
 
                     b.HasIndex("UserModelid");
 
@@ -352,10 +292,19 @@ namespace gitgudclone.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int?>("UserModelid")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("favorite")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("postBody")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("id");
+
+                    b.HasIndex("UserModelid");
 
                     b.ToTable("postsList");
                 });
@@ -431,23 +380,8 @@ namespace gitgudclone.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("gitgudclone.Models.FavoritesModel", b =>
-                {
-                    b.HasOne("gitgudclone.Models.AdminModel", null)
-                        .WithMany("adminFavorites")
-                        .HasForeignKey("AdminModelid");
-
-                    b.HasOne("gitgudclone.Models.UserModel", null)
-                        .WithMany("userFavorites")
-                        .HasForeignKey("UserModelid");
-                });
-
             modelBuilder.Entity("gitgudclone.Models.MessagesModel", b =>
                 {
-                    b.HasOne("gitgudclone.Models.AdminModel", null)
-                        .WithMany("adminMessages")
-                        .HasForeignKey("AdminModelid");
-
                     b.HasOne("gitgudclone.Models.UserModel", null)
                         .WithMany("userMessages")
                         .HasForeignKey("UserModelid");
@@ -455,10 +389,6 @@ namespace gitgudclone.Migrations
 
             modelBuilder.Entity("gitgudclone.Models.NotificationsModel", b =>
                 {
-                    b.HasOne("gitgudclone.Models.AdminModel", null)
-                        .WithMany("adminNotifications")
-                        .HasForeignKey("AdminModelid");
-
                     b.HasOne("gitgudclone.Models.UserModel", null)
                         .WithMany("userNotifications")
                         .HasForeignKey("UserModelid");
@@ -466,29 +396,21 @@ namespace gitgudclone.Migrations
 
             modelBuilder.Entity("gitgudclone.Models.PostQueueModel", b =>
                 {
-                    b.HasOne("gitgudclone.Models.AdminModel", null)
-                        .WithMany("adminQueue")
-                        .HasForeignKey("AdminModelid");
-
                     b.HasOne("gitgudclone.Models.UserModel", null)
-                        .WithMany("adminWarning")
+                        .WithMany("postQueue")
                         .HasForeignKey("UserModelid");
                 });
 
-            modelBuilder.Entity("gitgudclone.Models.AdminModel", b =>
+            modelBuilder.Entity("gitgudclone.Models.PostsModel", b =>
                 {
-                    b.Navigation("adminFavorites");
-
-                    b.Navigation("adminMessages");
-
-                    b.Navigation("adminNotifications");
-
-                    b.Navigation("adminQueue");
+                    b.HasOne("gitgudclone.Models.UserModel", null)
+                        .WithMany("userFavorites")
+                        .HasForeignKey("UserModelid");
                 });
 
             modelBuilder.Entity("gitgudclone.Models.UserModel", b =>
                 {
-                    b.Navigation("adminWarning");
+                    b.Navigation("postQueue");
 
                     b.Navigation("userFavorites");
 

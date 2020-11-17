@@ -388,4 +388,3 @@ C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\De
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\gitgudclone.pdb
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\gitgudclone.genruntimeconfig.cache
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\GitGud Passion Project.postman_collection.json
-C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\app.db

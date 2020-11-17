@@ -14,10 +14,6 @@ namespace gitgudclone.Data
         {
         }
 
-        public DbSet<AdminModel> adminList {get; set;}
-
-        public DbSet<FavoritesModel> favoriteList {get; set;}
-
         public DbSet<MessagesModel> messagesList {get; set;}
 
         public DbSet<NotificationsModel> notificationsList {get; set;}

@@ -19,12 +19,12 @@ namespace gitgudclone.Models
         [Display(Name = "Post")]
         public string userPost {get; set;}
 
-        public List<FavoritesModel> userFavorites {get; set;}
+        public List<PostsModel> userFavorites {get; set;}
 
         public List<MessagesModel> userMessages {get; set;}
 
         public List<NotificationsModel> userNotifications {get; set;}
 
-        public List<PostQueueModel> adminWarning {get; set;}
+        public List<PostQueueModel> postQueue {get; set;}
     }
 }
