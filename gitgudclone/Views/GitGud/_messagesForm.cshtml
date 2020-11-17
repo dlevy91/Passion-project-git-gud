@@ -1,0 +1,17 @@
+@model gitgudclone.Models.MessagesModel
+
+<div class = "form-group">
+    @Html.LabelFor(m => m.userEmail)
+    @Html.TextBoxFor(m => m.userEmail)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(m => m.recipientEmail)
+    @Html.TextBoxFor(m => m.recipientEmail)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(m => m.textBody)
+    @Html.TextBoxFor(m => m.textBody, new{@class = "form-control"})
+    @Html.ValidationMessageFor(m => m.textBody)
+</div>

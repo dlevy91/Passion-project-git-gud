@@ -1,0 +1,7 @@
+@model gitgudclone.Models.PostsModel
+
+<div class = "form-group">
+    @Html.LabelFor(p => p.postBody)
+    @Html.TextBoxFor(p => p.postBody, new{@class = "form-control"})
+    @Html.ValidationMessageFor(p => p.postBody)
+</div>

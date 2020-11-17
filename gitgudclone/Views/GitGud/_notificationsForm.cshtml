@@ -1,0 +1,17 @@
+@model gitgudclone.Models.NotificationsModel
+
+<div class = "form-group">
+    @Html.LabelFor(n => n.userEmail)
+    @Html.TextBoxFor(n => n.userEmail)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(n => n.notificationText)
+    @Html.TextBoxFor(n => n.notificationText, new{@class = "form-control"})
+    @Html.ValidationMessageFor(n => n.notificationText)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(n => n.isUrgent)
+    @Html.CheckBoxFor(n => n.isUrgent)
+</div>
