@@ -64,6 +64,7 @@ namespace Passion_project_git_gud.Controllers
             if(foundPost != null)
             {
             foundPost.postBody = upPost.postBody;
+            foundPost.isApproved = upPost.isApproved;
             _context.SaveChanges();
             return Content("Post Edited");
             }

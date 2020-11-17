@@ -64,12 +64,17 @@
 							"urlencoded": [
 								{
 									"key": "postBody",
-									"value": "This is a test part 2",
+									"value": "This is a test part 1",
 									"type": "text"
 								},
 								{
 									"key": "id",
-									"value": "2",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "isApproved",
+									"value": "false",
 									"type": "text"
 								}
 							]
@@ -105,6 +110,11 @@
 								{
 									"key": "postBody",
 									"value": "This is a test update",
+									"type": "text"
+								},
+								{
+									"key": "isApproved",
+									"value": "True",
 									"type": "text"
 								}
 							]
@@ -400,105 +410,6 @@
 							"path": [
 								"gitgud",
 								"deletenotif"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
-		{
-			"name": "Queue",
-			"item": [
-				{
-					"name": "ViewQueue",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "https://localhost:5001/gitgud/viewqueue",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "5001",
-							"path": [
-								"gitgud",
-								"viewqueue"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "AddQueue",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "2",
-									"type": "text"
-								},
-								{
-									"key": "authorEmail",
-									"value": "tomfrock@gmail.com",
-									"type": "text"
-								},
-								{
-									"key": "postBody",
-									"value": "This is a test part 2",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://localhost:5001/gitgud/addqueue",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "5001",
-							"path": [
-								"gitgud",
-								"addqueue"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DeletePostQueue",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "QueueID",
-									"value": "1",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://localhost:5001/gitgud/deletequeue",
-							"protocol": "https",
-							"host": [
-								"localhost"
-							],
-							"port": "5001",
-							"path": [
-								"gitgud",
-								"deletequeue"
 							]
 						}
 					},
