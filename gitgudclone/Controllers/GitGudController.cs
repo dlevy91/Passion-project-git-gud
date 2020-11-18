@@ -35,7 +35,8 @@ namespace Passion_project_git_gud.Controllers
         {
             // return Content("ViewPostDetails");
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
-            return View(foundPost);
+            // return View(foundPost);
+            return Content($"{foundPost.title} and {foundPost.postBody}");
         }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -47,13 +48,29 @@ namespace Passion_project_git_gud.Controllers
             // return Content("Add Post");
             // if(ModelState.IsValid)
             // {
+            
             _context.postsList.Add(newPost);
             _context.SaveChanges();
-            return RedirectToAction("ViewPosts");
+
+
+            // return RedirectToAction("ViewPosts");
+            return Content("Post Created");
             // }
             // else{
             //     return Content("Not Valid");
             // }
+        }
+
+        [HttpPost]
+        public IActionResult AddStep(string thisstring, int postID)
+        {
+            PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
+
+            foundPost.postBody = thisstring;
+
+            _context.SaveChanges();
+//Saving changes to database resolves update to object instance. It's the missing link.
+            return Content("Step Added");
         }
 
         public IActionResult AddPostForm()
@@ -126,6 +143,22 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+////////////////////////////////////////////////////////////////////////////////////////////
+        //========================Steps=============================
+
+        // [HttpPost]
+        // public IActionResult AddStep(StepsModel newStep, int postID)
+        // {
+        //     PostsModel foundPost = _context.postsList.Include(p => p.postBody).First(p => p.id == postID);
+
+            // _context.stepsList.Add(newStep);
+            // _context.SaveChanges();
+
+        //     foundPost.postBody.Add(newStep);
+
+        //     return Content("Step Added");            
+        // }
+
         //=====================Messages=============================
 
         public IActionResult ViewMessages()
@@ -142,6 +175,8 @@ namespace Passion_project_git_gud.Controllers
         }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+        //=====================Add=============================
+
         [HttpPost]
         public IActionResult AddMessage(MessagesModel newMessage)
         {
@@ -150,13 +185,20 @@ namespace Passion_project_git_gud.Controllers
             // {
             _context.messagesList.Add(newMessage);
             _context.SaveChanges();
-            return Content("Message Added");
+            return RedirectToAction("ViewMessages");
             // }
             // else{
             //    return Content("Not valid Message");
             // }
         }
+
+        public IActionResult AddMessageForm()
+        {
+            return View();
+        }
 ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //=====================Delete=============================
 
         public IActionResult DeleteMessageConf(int messageID)
         {
@@ -202,6 +244,8 @@ namespace Passion_project_git_gud.Controllers
         }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+        //=====================Add=============================
+
         [HttpPost]
         public IActionResult AddNotif(NotificationsModel newNotification)
         {
@@ -209,13 +253,20 @@ namespace Passion_project_git_gud.Controllers
             // {
             _context.notificationsList.Add(newNotification);
             _context.SaveChanges();
-            return Content("Notification Added");
+            return RedirectToAction("ViewNotifications");
             // }
             // else{
             //    return Content("Not valid Notification");
             // }
         }
+
+        public IActionResult AddNotifForm()
+        {
+            return View();
+        }
 ////////////////////////////////////////////////////////////////////////////////////////////
+
+        //=====================Delete=============================
 
         public IActionResult DeleteNotifConf(int notifID)
         {

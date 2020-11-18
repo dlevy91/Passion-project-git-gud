@@ -9,7 +9,7 @@ using gitgudclone.Data;
 namespace gitgudclone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201117203552_init")]
+    [Migration("20201118213757_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -281,6 +281,9 @@ namespace gitgudclone.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("postBody")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("title")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -382,7 +385,7 @@ namespace gitgudclone.Migrations
                         .HasForeignKey("UserModelid");
 
                     b.HasOne("gitgudclone.Models.UserModel", null)
-                        .WithMany("userPost")
+                        .WithMany("userPosts")
                         .HasForeignKey("UserModelid1");
                 });
 
@@ -394,7 +397,7 @@ namespace gitgudclone.Migrations
 
                     b.Navigation("userNotifications");
 
-                    b.Navigation("userPost");
+                    b.Navigation("userPosts");
                 });
 #pragma warning restore 612, 618
         }

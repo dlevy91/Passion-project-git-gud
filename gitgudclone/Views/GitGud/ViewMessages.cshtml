@@ -1,1 +1,8 @@
-View Messages
+@model gitgudclone.Data.ApplicationDbContext
+
+@foreach (MessagesModel message in @Model.messagesList)
+{
+    <a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">
+    <partial name = "_messagesDisplay" model = "@message"/>
+    </a>
+}
