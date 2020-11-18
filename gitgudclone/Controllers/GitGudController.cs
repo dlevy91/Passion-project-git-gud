@@ -25,9 +25,9 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Display=============================
 
-        public IActionResult ViewPost()
+        public IActionResult ViewPosts()
         {
-            return View(_context.postsList);
+            return View(_context);
             // return Content("View Post");
         }
 
@@ -37,8 +37,9 @@ namespace Passion_project_git_gud.Controllers
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
             return View(foundPost);
         }
+////////////////////////////////////////////////////////////////////////////////////////////
 
-        //=====================Posts=============================
+        //=====================Add=============================
 
         [HttpPost]
         public IActionResult AddPost(PostsModel newPost)
@@ -48,12 +49,20 @@ namespace Passion_project_git_gud.Controllers
             // {
             _context.postsList.Add(newPost);
             _context.SaveChanges();
-            return Content("Post Added");
+            return RedirectToAction("ViewPosts");
             // }
             // else{
             //     return Content("Not Valid");
             // }
         }
+
+        public IActionResult AddPostForm()
+        {
+            return View();
+        }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+        //=====================Edit=============================
 
         [HttpPost]
         public IActionResult EditPost(PostsModel upPost)
@@ -73,6 +82,34 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        public IActionResult EditPostForm(int postID)
+        {
+            PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
+            if(foundPost != null)
+            {
+                return View(foundPost);
+            }
+            else
+            {
+                return Content("No Post with that ID");
+            }
+        }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+        //=====================Delete=============================
+
+        public IActionResult DeletePostConf(int postID)
+        {
+            PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
+            if (foundPost != null)
+            {
+                return View(foundPost);
+            }
+            else{
+                return Content("No post found with that ID");
+            }
+        }
+
         public IActionResult DeletePost(int postID)
         {
             // return Content("Delete Post");
@@ -82,7 +119,7 @@ namespace Passion_project_git_gud.Controllers
             {
             _context.Remove(foundPost);
             _context.SaveChanges();
-            return Content("Post Deleted");
+            return RedirectToAction("ViewPosts");
             }
             else{
              return Content("Post Not found"); 
@@ -91,10 +128,10 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Messages=============================
 
-        public IActionResult ViewMessage()
+        public IActionResult ViewMessages()
         {
             // return Content("View Messages");
-            return View(_context.messagesList);
+            return View(_context);
         }
 
         public IActionResult ViewMessageDetails(int messageID)
@@ -103,6 +140,7 @@ namespace Passion_project_git_gud.Controllers
             MessagesModel foundMessage = _context.messagesList.FirstOrDefault(m => m.id == messageID);
             return View(foundMessage);
         }
+////////////////////////////////////////////////////////////////////////////////////////////
 
         [HttpPost]
         public IActionResult AddMessage(MessagesModel newMessage)
@@ -118,6 +156,19 @@ namespace Passion_project_git_gud.Controllers
             //    return Content("Not valid Message");
             // }
         }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+        public IActionResult DeleteMessageConf(int messageID)
+        {
+            MessagesModel foundMessage = _context.messagesList.FirstOrDefault(m => m.id == messageID);
+            if (foundMessage != null)
+            {
+                return View(foundMessage);
+            }
+            else{
+                return Content("No message found with that ID");
+            }
+        }
 
         public IActionResult DeleteMessage(int messageID)
         {
@@ -128,7 +179,7 @@ namespace Passion_project_git_gud.Controllers
             {
             _context.Remove(foundMessage);
             _context.SaveChanges();
-            return Content("Message Deleted");
+            return RedirectToAction("ViewMessages");
             }
             else{
                return Content("Message not found");
@@ -140,7 +191,7 @@ namespace Passion_project_git_gud.Controllers
         public IActionResult ViewNotifications()
         {
             // return Content("ViewNotifications");
-            return View(_context.notificationsList);
+            return View(_context);
         }
 
         public IActionResult ViewNotificationDetails(int notifID)
@@ -149,6 +200,7 @@ namespace Passion_project_git_gud.Controllers
             NotificationsModel foundNotif = _context.notificationsList.FirstOrDefault(n => n.id == notifID);
             return View(foundNotif);
         }
+////////////////////////////////////////////////////////////////////////////////////////////
 
         [HttpPost]
         public IActionResult AddNotif(NotificationsModel newNotification)
@@ -163,6 +215,19 @@ namespace Passion_project_git_gud.Controllers
             //    return Content("Not valid Notification");
             // }
         }
+////////////////////////////////////////////////////////////////////////////////////////////
+
+        public IActionResult DeleteNotifConf(int notifID)
+        {
+            NotificationsModel foundNotif = _context.notificationsList.FirstOrDefault(n => n.id == notifID);
+            if(foundNotif != null)
+            {
+                return View(foundNotif);
+            }
+            else{
+                return Content("No notification found with that ID");
+            }
+        }
 
         public IActionResult DeleteNotif(int notifID)
         {
@@ -173,7 +238,7 @@ namespace Passion_project_git_gud.Controllers
             {
             _context.Remove(foundNotif);
             _context.SaveChanges();
-            return Content("Notification Deleted");
+            return RedirectToAction("ViewNotifications");
             }
             else{
                return Content("Notification not found");

@@ -15613,6 +15613,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewPostDetails.cshtml",
+      "TargetPath": "Views\\GitGud\\ViewPostDetails.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_postsDisplay.cshtml",
       "TargetPath": "Views\\GitGud\\_postsDisplay.cshtml",
       "FileKind": "mvc"
@@ -15628,8 +15633,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewMessages.cshtml",
+      "TargetPath": "Views\\GitGud\\ViewMessages.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_notificationsForm.cshtml",
       "TargetPath": "Views\\GitGud\\_notificationsForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\DeleteMessage.cshtml",
+      "TargetPath": "Views\\GitGud\\DeleteMessage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewPosts.cshtml",
+      "TargetPath": "Views\\GitGud\\ViewPosts.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15638,13 +15658,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewNotifications.cshtml",
+      "TargetPath": "Views\\GitGud\\ViewNotifications.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\AddMessage.cshtml",
+      "TargetPath": "Views\\GitGud\\AddMessage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\DeletePostConf.cshtml",
+      "TargetPath": "Views\\GitGud\\DeletePostConf.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewNotificationDetails.cshtml",
+      "TargetPath": "Views\\GitGud\\ViewNotificationDetails.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15655,6 +15695,26 @@
     {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\AddNotif.cshtml",
+      "TargetPath": "Views\\GitGud\\AddNotif.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\EditPostForm.cshtml",
+      "TargetPath": "Views\\GitGud\\EditPostForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewMessageDetails.cshtml",
+      "TargetPath": "Views\\GitGud\\ViewMessageDetails.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\AddPostForm.cshtml",
+      "TargetPath": "Views\\GitGud\\AddPostForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15670,6 +15730,11 @@
     {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_messagesForm.cshtml",
       "TargetPath": "Views\\GitGud\\_messagesForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\DeleteNotif.cshtml",
+      "TargetPath": "Views\\GitGud\\DeleteNotif.cshtml",
       "FileKind": "mvc"
     },
     {

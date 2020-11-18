@@ -1,0 +1,10 @@
+@model gitgudclone.Models.PostsModel
+
+<h1>Add new post</h1>
+
+@using (@Html.BeginForm("addPost", "gitgud"))
+{
+    <partial name = "_postsForm" model = "@Model"/>
+
+    <button type = "submit">Add Post</button>
+}

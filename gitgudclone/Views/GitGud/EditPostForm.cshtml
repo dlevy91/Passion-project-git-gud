@@ -1,0 +1,13 @@
+@model gitgudclone.Models.PostsModel
+
+<h1>Edit post</h1>
+
+@using (@Html.BeginForm("editPost", "gitgud"))
+{
+    <partial name = "_postsForm" model = "@Model"/>
+    <div>
+        @Html.HiddenFor(p => p.id)
+    </div>
+
+    <button type = "submit">Submit</button>
+}

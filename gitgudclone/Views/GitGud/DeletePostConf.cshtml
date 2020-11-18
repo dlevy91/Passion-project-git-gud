@@ -1,0 +1,7 @@
+@model gitgudclone.Models.PostsModel
+
+<h1>Do you wish to delete post @Model.id?</h1>
+
+<a asp-area="" asp-controller="gitgud" asp-action="deletePost" asp-route-postID="@Model.id">
+<button>Delete</button>
+</a>

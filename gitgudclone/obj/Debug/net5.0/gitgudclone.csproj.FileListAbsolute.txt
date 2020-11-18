@@ -395,3 +395,16 @@ C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\De
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_postsDisplay.cshtml.g.cs
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_postsForm.cshtml.g.cs
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\app.db
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\AddMessage.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\AddNotif.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\DeleteMessage.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\DeleteNotif.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\ViewMessageDetails.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\ViewMessages.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\ViewNotificationDetails.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\ViewNotifications.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\ViewPostDetails.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\DeletePostConf.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\ViewPosts.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\AddPostForm.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\EditPostForm.cshtml.g.cs
