@@ -9,7 +9,7 @@ using gitgudclone.Data;
 namespace gitgudclone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201119152218_init")]
+    [Migration("20201119201254_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -274,14 +274,8 @@ namespace gitgudclone.Migrations
                     b.Property<int?>("UserModelid")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("UserModelid1")
-                        .HasColumnType("INTEGER");
-
                     b.Property<bool>("isApproved")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("postBody")
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("title")
                         .IsRequired()
@@ -291,9 +285,30 @@ namespace gitgudclone.Migrations
 
                     b.HasIndex("UserModelid");
 
-                    b.HasIndex("UserModelid1");
-
                     b.ToTable("postsList");
+                });
+
+            modelBuilder.Entity("gitgudclone.Models.StepsModel", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("PostsModelid")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("img")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("step")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("PostsModelid");
+
+                    b.ToTable("StepsModel");
                 });
 
             modelBuilder.Entity("gitgudclone.Models.UserModel", b =>
@@ -381,18 +396,24 @@ namespace gitgudclone.Migrations
             modelBuilder.Entity("gitgudclone.Models.PostsModel", b =>
                 {
                     b.HasOne("gitgudclone.Models.UserModel", null)
-                        .WithMany("userFavorites")
-                        .HasForeignKey("UserModelid");
-
-                    b.HasOne("gitgudclone.Models.UserModel", null)
                         .WithMany("userPosts")
-                        .HasForeignKey("UserModelid1");
+                        .HasForeignKey("UserModelid");
+                });
+
+            modelBuilder.Entity("gitgudclone.Models.StepsModel", b =>
+                {
+                    b.HasOne("gitgudclone.Models.PostsModel", null)
+                        .WithMany("postSteps")
+                        .HasForeignKey("PostsModelid");
+                });
+
+            modelBuilder.Entity("gitgudclone.Models.PostsModel", b =>
+                {
+                    b.Navigation("postSteps");
                 });
 
             modelBuilder.Entity("gitgudclone.Models.UserModel", b =>
                 {
-                    b.Navigation("userFavorites");
-
                     b.Navigation("userMessages");
 
                     b.Navigation("userNotifications");

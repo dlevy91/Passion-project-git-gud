@@ -15648,8 +15648,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\AddStepForm.cshtml",
+      "TargetPath": "Views\\GitGud\\AddStepForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewPosts.cshtml",
       "TargetPath": "Views\\GitGud\\ViewPosts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_stepForm.cshtml",
+      "TargetPath": "Views\\GitGud\\_stepForm.cshtml",
       "FileKind": "mvc"
     },
     {

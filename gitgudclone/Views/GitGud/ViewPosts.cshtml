@@ -1,8 +1,10 @@
 @model gitgudclone.Data.ApplicationDbContext
 
-@foreach (PostsModel post in @Model.postsList)
-{
-    <a asp-area="" asp-controller="gitgud" asp-action="viewpostdetails" asp-route-postID = "@post.id">
-    <partial name = "_postsDisplay" model = "@post"/>
-    </a>
-}
+<div class="card-columns">
+    @foreach (PostsModel post in @Model.postsList)
+    {
+        <a asp-area="" asp-controller="gitgud" asp-action="viewpostdetails" asp-route-postID="@post.id">
+            <partial name="_postsDisplay" model="@post" />
+        </a>
+    }
+</div>

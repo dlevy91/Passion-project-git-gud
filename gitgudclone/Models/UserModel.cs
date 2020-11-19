@@ -18,7 +18,7 @@ namespace gitgudclone.Models
 
         public List<PostsModel> userPosts {get; set;}
 
-        public List<PostsModel> userFavorites {get; set;}
+        // public List<PostsModel> userFavorites {get; set;}
 
         public List<MessagesModel> userMessages {get; set;}
 

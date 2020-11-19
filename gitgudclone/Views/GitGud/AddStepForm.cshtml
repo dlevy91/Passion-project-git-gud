@@ -1,0 +1,13 @@
+@model gitgudclone.Models.StepsModel
+
+<h1>Add new step</h1>
+
+@using (@Html.BeginForm("addStep", "gitgud"))
+{
+    <partial name = "_stepForm" model = "@Model"/>
+    <div>
+        @Html.HiddenFor(s => s.id)
+    </div>
+
+    <button type = "submit">Add Step</button>
+}

@@ -14,21 +14,23 @@ namespace gitgudclone.Models
         public string title {get; set;}
 
         // [NotMapped]
-        // public List<string> postBody {get; set;}
+        public List<StepsModel> postSteps {get; set;}
 
-        public string postBody {get; set;}
+        // public ICollection<StepsModel> postBody {get; set;}
+
+        // public string postBody {get; set;}
 
         public bool isApproved {get; set;}
     }
 
-    // public class StepsModel
-    // {
-    //     [Key]
-    //     public int id {get; set;}
+    public class StepsModel
+    {
+        [Key]
+        public int id {get; set;}
 
-    //     [Required]
-    //     public string step {get; set;}
+        [Required]
+        public string step {get; set;}
 
-    //     public string img {get; set;}
-    // }
+        public string img {get; set;}
+    }
 }

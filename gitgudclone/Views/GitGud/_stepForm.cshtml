@@ -1,0 +1,13 @@
+@model gitgudclone.Models.StepsModel
+
+<div class = "form-group">
+    @Html.LabelFor(s => s.step)
+    @Html.TextBoxFor(s => s.step, new{@class = "form-control"})
+    @Html.ValidationMessageFor(s => s.step)
+</div>
+
+<div class = "form-group">
+    @Html.LabelFor(s => s.img)
+    @Html.TextBoxFor(s => s.img, new{@class = "form-control"})
+    @Html.ValidationMessageFor(s => s.img)
+</div>

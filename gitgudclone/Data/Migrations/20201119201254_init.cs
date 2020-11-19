@@ -217,10 +217,8 @@ namespace gitgudclone.Migrations
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     title = table.Column<string>(type: "TEXT", nullable: false),
-                    postBody = table.Column<string>(type: "TEXT", nullable: true),
                     isApproved = table.Column<bool>(type: "INTEGER", nullable: false),
-                    UserModelid = table.Column<int>(type: "INTEGER", nullable: true),
-                    UserModelid1 = table.Column<int>(type: "INTEGER", nullable: true)
+                    UserModelid = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -231,10 +229,25 @@ namespace gitgudclone.Migrations
                         principalTable: "userList",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "StepsModel",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    step = table.Column<string>(type: "TEXT", nullable: false),
+                    img = table.Column<string>(type: "TEXT", nullable: true),
+                    PostsModelid = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_StepsModel", x => x.id);
                     table.ForeignKey(
-                        name: "FK_postsList_userList_UserModelid1",
-                        column: x => x.UserModelid1,
-                        principalTable: "userList",
+                        name: "FK_StepsModel_postsList_PostsModelid",
+                        column: x => x.PostsModelid,
+                        principalTable: "postsList",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -292,9 +305,9 @@ namespace gitgudclone.Migrations
                 column: "UserModelid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_postsList_UserModelid1",
-                table: "postsList",
-                column: "UserModelid1");
+                name: "IX_StepsModel_PostsModelid",
+                table: "StepsModel",
+                column: "PostsModelid");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -321,13 +334,16 @@ namespace gitgudclone.Migrations
                 name: "notificationsList");
 
             migrationBuilder.DropTable(
-                name: "postsList");
+                name: "StepsModel");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "postsList");
 
             migrationBuilder.DropTable(
                 name: "userList");

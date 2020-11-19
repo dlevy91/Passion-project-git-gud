@@ -27,6 +27,7 @@ namespace Passion_project_git_gud.Controllers
 
         public IActionResult ViewPosts()
         {
+            List<PostsModel> foundPosts = _context.postsList.Include(p => p.postSteps).ToList();
             return View(_context);
             // return Content("View Post");
         }
@@ -34,7 +35,7 @@ namespace Passion_project_git_gud.Controllers
         public IActionResult ViewPostDetails(int postID)
         {
             // return Content("ViewPostDetails");
-            PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
+            PostsModel foundPost = _context.postsList.Include(p => p.postSteps).FirstOrDefault(p => p.id == postID);
             return View(foundPost);
             // return Content($"{foundPost.title} and {foundPost.postBody}");
         }
@@ -53,7 +54,7 @@ namespace Passion_project_git_gud.Controllers
             _context.SaveChanges();
 
 
-            return RedirectToAction("ViewPosts");
+            return RedirectToAction("AddStepForm", new {postID = newPost.id});
             // return Content("Post Created");
             // }
             // else{
@@ -61,22 +62,30 @@ namespace Passion_project_git_gud.Controllers
             // }
         }
 
-//         [HttpPost]
-//         public IActionResult AddStep(string thisstring, int postID)
-//         {
-//             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
-
-//             foundPost.postBody = thisstring;
-
-//             _context.SaveChanges();
-// //Saving changes to database resolves update to object instance. It's the missing link.
-//             return Content("Step Added");
-//         }
-
         public IActionResult AddPostForm()
         {
             return View();
         }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+        //========================Steps=============================
+
+        [HttpPost]
+        public IActionResult AddStep(StepsModel newStep, int postID)
+        {
+            PostsModel foundPost = _context.postsList.Include(p => p.postSteps).FirstOrDefault(p => p.id == postID);
+            foundPost.postSteps.Add(newStep);
+            _context.SaveChanges();
+
+            return RedirectToAction("ViewPosts");
+        }
+
+        public IActionResult AddStepForm(int postID)
+        {
+            return View();
+        }
+            
 ////////////////////////////////////////////////////////////////////////////////////////////
 
         //=====================Edit=============================
@@ -89,7 +98,7 @@ namespace Passion_project_git_gud.Controllers
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == upPost.id);
             if(foundPost != null)
             {
-            foundPost.postBody = upPost.postBody;
+            foundPost.postSteps = upPost.postSteps;
             foundPost.isApproved = upPost.isApproved;
             _context.SaveChanges();
             return RedirectToAction("ViewPosts");
@@ -142,22 +151,6 @@ namespace Passion_project_git_gud.Controllers
              return Content("Post Not found"); 
             }
         }
-
-////////////////////////////////////////////////////////////////////////////////////////////
-        //========================Steps=============================
-
-        // [HttpPost]
-        // public IActionResult AddStep(StepsModel newStep, int postID)
-        // {
-        //     PostsModel foundPost = _context.postsList.Include(p => p.postBody).First(p => p.id == postID);
-
-            // _context.stepsList.Add(newStep);
-            // _context.SaveChanges();
-
-        //     foundPost.postBody.Add(newStep);
-
-        //     return Content("Step Added");            
-        // }
 
         //=====================Messages=============================
 

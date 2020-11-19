@@ -3,6 +3,19 @@
 <div class="card text-white bg-dark mb3 " style="width: 18rem;">
     <div class="card-body">
         <p id="id" class="card-title">@Model.title</p>
-        <p id="id" class="card-title">@Model.postBody</p>
+
+        <ul id="id" class = "card-title">
+            @foreach (StepsModel step in @Model.postSteps)
+            {
+                <li>
+                    @step.step
+                    @if (step.img != null)
+                    {
+                        <img src=@step.img width="200px" alt="step.img"/>
+                    }
+                </li>
+            }
+        </ul>
+        
     </div>
 </div>
