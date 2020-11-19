@@ -3,3 +3,11 @@
 <h1>Post Details</h1>
 
 <partial name = "_postsDisplay" model = "@Model"/>
+
+<a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
+    <button>Edit Post</button>
+</a>
+
+<a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
+    <button>Delete Post</button>
+</a>

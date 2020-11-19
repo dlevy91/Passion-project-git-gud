@@ -1,0 +1,7 @@
+@model gitgudclone.Models.NotificationsModel
+
+<h1>Do you wish to delete notification @Model.notificationText?</h1>
+
+<a asp-area="" asp-controller="gitgud" asp-action="deletenotif" asp-route-notifID="@Model.id">
+<button>Delete</button>
+</a>

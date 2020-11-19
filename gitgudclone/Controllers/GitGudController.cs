@@ -35,8 +35,8 @@ namespace Passion_project_git_gud.Controllers
         {
             // return Content("ViewPostDetails");
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
-            // return View(foundPost);
-            return Content($"{foundPost.title} and {foundPost.postBody}");
+            return View(foundPost);
+            // return Content($"{foundPost.title} and {foundPost.postBody}");
         }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,25 +53,25 @@ namespace Passion_project_git_gud.Controllers
             _context.SaveChanges();
 
 
-            // return RedirectToAction("ViewPosts");
-            return Content("Post Created");
+            return RedirectToAction("ViewPosts");
+            // return Content("Post Created");
             // }
             // else{
             //     return Content("Not Valid");
             // }
         }
 
-        [HttpPost]
-        public IActionResult AddStep(string thisstring, int postID)
-        {
-            PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
+//         [HttpPost]
+//         public IActionResult AddStep(string thisstring, int postID)
+//         {
+//             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
 
-            foundPost.postBody = thisstring;
+//             foundPost.postBody = thisstring;
 
-            _context.SaveChanges();
-//Saving changes to database resolves update to object instance. It's the missing link.
-            return Content("Step Added");
-        }
+//             _context.SaveChanges();
+// //Saving changes to database resolves update to object instance. It's the missing link.
+//             return Content("Step Added");
+//         }
 
         public IActionResult AddPostForm()
         {
@@ -92,7 +92,7 @@ namespace Passion_project_git_gud.Controllers
             foundPost.postBody = upPost.postBody;
             foundPost.isApproved = upPost.isApproved;
             _context.SaveChanges();
-            return Content("Post Edited");
+            return RedirectToAction("ViewPosts");
             }
             else{
              return Content("Post Not found"); 

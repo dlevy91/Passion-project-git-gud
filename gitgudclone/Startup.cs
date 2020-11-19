@@ -68,7 +68,7 @@ namespace gitgudclone
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=gitgud}/{action=viewposts}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

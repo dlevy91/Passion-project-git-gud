@@ -1,0 +1,10 @@
+@model gitgudclone.Models.NotificationsModel
+
+<h1>Make Notification</h1>
+
+@using (@Html.BeginForm("addNotif", "gitgud"))
+{
+    <partial name = "_notificationsForm" model = "@Model"/>
+
+    <button type = "submit">Send Notification</button>
+}

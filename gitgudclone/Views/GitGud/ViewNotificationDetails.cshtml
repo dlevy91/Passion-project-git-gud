@@ -1,1 +1,8 @@
-View Notification Details
+@model gitgudclone.Models.NotificationsModel
+
+<partial name = "_notificationsDisplay" model = "@Model"/>
+
+<a asp-area="" asp-controller="gitgud" asp-action="deletenotifconf" asp-route-notifID = "@Model.id">
+    <button>Delete</button>
+</a>
+

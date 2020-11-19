@@ -1,0 +1,10 @@
+@model gitgudclone.Models.MessagesModel
+
+<h1>Send Message</h1>
+
+@using (@Html.BeginForm("addMessage", "gitgud"))
+{
+    <partial name = "_messagesForm" model = "@Model"/>
+
+    <button type = "submit">Send Message</button>
+}

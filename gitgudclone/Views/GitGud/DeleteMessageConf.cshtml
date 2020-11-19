@@ -1,0 +1,7 @@
+@model gitgudclone.Models.MessagesModel
+
+<h1>Do you wish to delete message from user @Model.recipientEmail?</h1>
+
+<a asp-area="" asp-controller="gitgud" asp-action="deletemessage" asp-route-messageID="@Model.id">
+<button>Delete</button>
+</a>

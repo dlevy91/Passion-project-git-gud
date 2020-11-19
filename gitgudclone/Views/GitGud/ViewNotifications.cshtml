@@ -1,1 +1,8 @@
-View Notifications
+@model gitgudclone.Data.ApplicationDbContext
+
+@foreach (NotificationsModel notif in @Model.notificationsList)
+{
+    <a asp-area="" asp-controller="gitgud" asp-action="viewnotificationdetails" asp-route-notifID = "@notif.id">
+    <partial name = "_notificationsDisplay" model = "@notif"/>
+    </a>
+}
