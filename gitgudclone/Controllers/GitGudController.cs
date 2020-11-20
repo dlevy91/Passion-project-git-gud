@@ -173,6 +173,19 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        public IActionResult EditStepForm(int stepID)
+        {
+            StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
+
+            if(foundStep != null)
+            {
+                return View(foundStep);
+            }
+            else{
+                return Content("This step does not exist.");
+            }
+        }
+
         //========================Delete==============================
 
         public IActionResult DeleteStep(int stepID)
@@ -185,6 +198,19 @@ namespace Passion_project_git_gud.Controllers
 
                 _context.SaveChanges();
                 return Content("Step deleted!");
+            }
+            else{
+                return Content("No step found with that ID");
+            }
+        }
+
+        public IActionResult DeleteStepConf(int stepID)
+        {
+            StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
+
+            if(foundStep != null)
+            {
+                return View(foundStep);
             }
             else{
                 return Content("No step found with that ID");

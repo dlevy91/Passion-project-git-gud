@@ -1,0 +1,7 @@
+@model gitgudclone.Models.StepsModel
+
+<h1>Do you wish to delete step @Model.step?</h1>
+
+<a asp-area="" asp-controller="gitgud" asp-action="deletestep" asp-route-stepID="@Model.id">
+<button>Delete</button>
+</a>

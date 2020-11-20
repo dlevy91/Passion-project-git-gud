@@ -15658,6 +15658,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\EditStepForm.cshtml",
+      "TargetPath": "Views\\GitGud\\EditStepForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\DeletestepConf.cshtml",
+      "TargetPath": "Views\\GitGud\\DeletestepConf.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\_stepForm.cshtml",
       "TargetPath": "Views\\GitGud\\_stepForm.cshtml",
       "FileKind": "mvc"
