@@ -141,15 +141,22 @@ namespace Passion_project_git_gud.Controllers
         public IActionResult AddStep(StepsModel newStep, int postID)
         {
             PostsModel foundPost = _context.postsList.Include(p => p.postSteps).FirstOrDefault(p => p.id == postID);
+            if(foundPost != null)
+            {
             foundPost.postSteps.Add(newStep);
             _context.SaveChanges();
 
             return RedirectToAction("ViewPosts");
             // return Content("Step Added");
+            }
+            else{
+                return Content("Post not found!");
+            }
         }
 
         public IActionResult AddStepForm(int postID)
         {
+            ViewData["postID"] = postID;
             return View();
         }
 
