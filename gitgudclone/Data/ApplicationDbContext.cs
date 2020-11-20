@@ -22,6 +22,6 @@ namespace gitgudclone.Data
 
         public DbSet<PostsModel> postsList {get; set;}
 
-        // public DbSet<StepsModel> stepsList {get; set;}
+        public DbSet<StepsModel> stepsList {get; set;}
     }
 }

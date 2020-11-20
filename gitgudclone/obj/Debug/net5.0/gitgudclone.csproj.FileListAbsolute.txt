@@ -407,6 +407,6 @@ C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\De
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\DeleteMessageConf.cshtml.g.cs
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\AddNotifForm.cshtml.g.cs
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\DeleteNotifConf.cshtml.g.cs
-C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\app.db
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\AddStepForm.cshtml.g.cs
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\_stepForm.cshtml.g.cs
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\app.db

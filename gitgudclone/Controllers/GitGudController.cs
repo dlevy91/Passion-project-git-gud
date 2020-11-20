@@ -66,25 +66,6 @@ namespace Passion_project_git_gud.Controllers
         {
             return View();
         }
-
-
-////////////////////////////////////////////////////////////////////////////////////////////
-        //========================Steps=============================
-
-        [HttpPost]
-        public IActionResult AddStep(StepsModel newStep, int postID)
-        {
-            PostsModel foundPost = _context.postsList.Include(p => p.postSteps).FirstOrDefault(p => p.id == postID);
-            foundPost.postSteps.Add(newStep);
-            _context.SaveChanges();
-
-            return RedirectToAction("ViewPosts");
-        }
-
-        public IActionResult AddStepForm(int postID)
-        {
-            return View();
-        }
             
 ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -149,6 +130,64 @@ namespace Passion_project_git_gud.Controllers
             }
             else{
              return Content("Post Not found"); 
+            }
+        }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+        //========================Steps=============================
+
+        [HttpPost]
+        public IActionResult AddStep(StepsModel newStep, int postID)
+        {
+            PostsModel foundPost = _context.postsList.Include(p => p.postSteps).FirstOrDefault(p => p.id == postID);
+            foundPost.postSteps.Add(newStep);
+            _context.SaveChanges();
+
+            return RedirectToAction("ViewPosts");
+            // return Content("Step Added");
+        }
+
+        public IActionResult AddStepForm(int postID)
+        {
+            return View();
+        }
+
+        //========================Edit==============================
+
+        [HttpPost]
+        public IActionResult EditStep(StepsModel upStep, int stepID)
+        {
+            StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
+
+            if(foundStep != null)
+            {
+                foundStep.img = upStep.img;
+                foundStep.step = upStep.step;
+
+                _context.SaveChanges();
+                return Content("Step updated!");
+            }
+            else{
+                return Content("No step found with that ID");
+            }
+        }
+
+        //========================Delete==============================
+
+        public IActionResult DeleteStep(int stepID)
+        {
+            StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
+
+            if(foundStep != null)
+            {
+                _context.Remove(foundStep);
+
+                _context.SaveChanges();
+                return Content("Step deleted!");
+            }
+            else{
+                return Content("No step found with that ID");
             }
         }
 

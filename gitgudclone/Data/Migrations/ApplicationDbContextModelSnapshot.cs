@@ -306,7 +306,7 @@ namespace gitgudclone.Migrations
 
                     b.HasIndex("PostsModelid");
 
-                    b.ToTable("StepsModel");
+                    b.ToTable("stepsList");
                 });
 
             modelBuilder.Entity("gitgudclone.Models.UserModel", b =>

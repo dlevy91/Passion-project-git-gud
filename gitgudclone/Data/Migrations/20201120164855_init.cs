@@ -232,7 +232,7 @@ namespace gitgudclone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StepsModel",
+                name: "stepsList",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -243,9 +243,9 @@ namespace gitgudclone.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StepsModel", x => x.id);
+                    table.PrimaryKey("PK_stepsList", x => x.id);
                     table.ForeignKey(
-                        name: "FK_StepsModel_postsList_PostsModelid",
+                        name: "FK_stepsList_postsList_PostsModelid",
                         column: x => x.PostsModelid,
                         principalTable: "postsList",
                         principalColumn: "id",
@@ -305,8 +305,8 @@ namespace gitgudclone.Migrations
                 column: "UserModelid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StepsModel_PostsModelid",
-                table: "StepsModel",
+                name: "IX_stepsList_PostsModelid",
+                table: "stepsList",
                 column: "PostsModelid");
         }
 
@@ -334,7 +334,7 @@ namespace gitgudclone.Migrations
                 name: "notificationsList");
 
             migrationBuilder.DropTable(
-                name: "StepsModel");
+                name: "stepsList");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

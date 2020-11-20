@@ -9,7 +9,7 @@ using gitgudclone.Data;
 namespace gitgudclone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201119201254_init")]
+    [Migration("20201120164855_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -308,7 +308,7 @@ namespace gitgudclone.Migrations
 
                     b.HasIndex("PostsModelid");
 
-                    b.ToTable("StepsModel");
+                    b.ToTable("stepsList");
                 });
 
             modelBuilder.Entity("gitgudclone.Models.UserModel", b =>
