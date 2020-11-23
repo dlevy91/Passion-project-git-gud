@@ -20,24 +20,6 @@ This project is a way for users to share information that they want to with othe
       <td>list User Favorites </td>
       <td>list User Messages </td>
       <td>list User Notifications </td>
-      <td>list AdminWarning </td>
-    </tr>
-    <tr>
-      <th scope="row">Admin</th>
-      <td>int ID</td>
-      <td>string Admin Email</td>
-      <td>string Admin screen name</td>
-      <td>string Admin Posts</td>
-      <td>list Admin Favorites </td>
-      <td>list Admin Messages </td>
-      <td>list Admin Notifications </td>
-      <td>list Post Queue</td>      
-    </tr>
-    <tr>
-      <th scope="row">Favorites</th>
-      <td>int ID</td>
-      <td>string user Email</td>
-      <td>bool userFav</td>    
     </tr>
     <tr>
       <th scope="row">Messages</th>
@@ -52,14 +34,21 @@ This project is a way for users to share information that they want to with othe
       <td>string User Email</td>
       <td>bool isUrgent</td>  
       <td>string notification text</td>
-    </tr>
-    <tr>
-      <th scope="row">PostQueue</th>
+    </tr>    
+       <tr>
+      <th scope="row">Posts</th>
       <td>int ID</td>
-      <td>string Author Email</td>
-      <td>string post body</td>
-    </tr>
-    
+      <td>string title</td>
+      <td>list postSteps</td>  
+      <td>bool isApproved</td>
+    </tr>  
+      <tr>
+      <th scope="row">Steps</th>
+      <td>int ID</td>
+      <td>string step</td>
+      <td>string img</td>  
+      <td>int postID</td>
+    </tr>  
   </tbody>
 </table>
 
