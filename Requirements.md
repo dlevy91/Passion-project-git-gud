@@ -3,6 +3,11 @@
 # Project Summary
 This project is a way for users to share information that they want to with other users. Each user can submit their own ideas with step by step instructions and photos on how to do said thing. Users can also message the OP to get clarification if they don't understand a step, they can also search posts based on project title or tags that the OP used when making their post. Admin will approve posts and if anything is off they will mark it as a "needs to be revised" before it gets posted to the public.
 
+# Logins for testing
+admin@email.com P@ssw0rd
+
+test@mail.com P@ssw0rd
+
 # Models
 <table class="table">
   <thead>
