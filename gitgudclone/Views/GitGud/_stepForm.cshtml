@@ -11,3 +11,7 @@
     @Html.TextBoxFor(s => s.img, new{@class = "form-control"})
     @Html.ValidationMessageFor(s => s.img)
 </div>
+
+<div>
+    @Html.HiddenFor(s => s.postID)
+</div>

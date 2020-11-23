@@ -9,7 +9,7 @@ using gitgudclone.Data;
 namespace gitgudclone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201120164855_init")]
+    [Migration("20201123154959_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -299,6 +299,9 @@ namespace gitgudclone.Migrations
 
                     b.Property<string>("img")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("postID")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("step")
                         .IsRequired()

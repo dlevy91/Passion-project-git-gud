@@ -239,6 +239,7 @@ namespace gitgudclone.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     step = table.Column<string>(type: "TEXT", nullable: false),
                     img = table.Column<string>(type: "TEXT", nullable: true),
+                    postID = table.Column<int>(type: "INTEGER", nullable: false),
                     PostsModelid = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>

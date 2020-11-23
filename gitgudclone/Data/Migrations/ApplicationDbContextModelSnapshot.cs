@@ -298,6 +298,9 @@ namespace gitgudclone.Migrations
                     b.Property<string>("img")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("postID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("step")
                         .IsRequired()
                         .HasColumnType("TEXT");

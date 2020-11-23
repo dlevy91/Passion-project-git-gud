@@ -32,5 +32,7 @@ namespace gitgudclone.Models
         public string step {get; set;}
 
         public string img {get; set;}
+
+        public int postID {get; set;}
     }
 }
