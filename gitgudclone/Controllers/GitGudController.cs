@@ -163,9 +163,9 @@ namespace Passion_project_git_gud.Controllers
         //========================Edit==============================
 
         [HttpPost]
-        public IActionResult EditStep(StepsModel upStep, int stepID)
+        public IActionResult EditStep(StepsModel upStep)
         {
-            StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
+            StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == upStep.id);
 
             if(foundStep != null)
             {
@@ -173,7 +173,7 @@ namespace Passion_project_git_gud.Controllers
                 foundStep.step = upStep.step;
 
                 _context.SaveChanges();
-                return Content("Step updated!");
+                return RedirectToAction("ViewPosts");
             }
             else{
                 return Content("No step found with that ID");

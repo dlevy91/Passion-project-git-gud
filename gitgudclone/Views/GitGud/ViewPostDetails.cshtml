@@ -5,9 +5,20 @@
 <partial name = "_postsDisplay" model = "@Model"/>
 
 <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
-    <button>Edit Post</button>
+    <button>Edit Title</button>
 </a>
 
 <a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
     <button>Delete Post</button>
 </a>
+
+<a asp-area="" asp-controller="gitgud" asp-action="addstepform" asp-route-postID="@Model.id">
+    <button>Add Step</button>
+</a>
+
+@foreach (StepsModel step in @Model.postSteps)
+{
+    <a asp-area="" asp-controller="gitgud" asp-action="editstepform" asp-route-stepID="@step.id">
+    <button>Edit Step @step.id</button>
+</a>
+}
