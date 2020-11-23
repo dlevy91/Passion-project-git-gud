@@ -204,7 +204,7 @@ namespace Passion_project_git_gud.Controllers
                 _context.Remove(foundStep);
 
                 _context.SaveChanges();
-                return Content("Step deleted!");
+                return RedirectToAction("ViewPosts");
             }
             else{
                 return Content("No step found with that ID");

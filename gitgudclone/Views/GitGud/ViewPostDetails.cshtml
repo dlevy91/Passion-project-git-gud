@@ -2,7 +2,7 @@
 
 <h1>Post Details</h1>
 
-<partial name = "_postsDisplay" model = "@Model"/>
+<partial name="_postsDisplay" model="@Model" />
 
 <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
     <button>Edit Title</button>
@@ -19,6 +19,14 @@
 @foreach (StepsModel step in @Model.postSteps)
 {
     <a asp-area="" asp-controller="gitgud" asp-action="editstepform" asp-route-stepID="@step.id">
-    <button>Edit Step @step.id</button>
-</a>
+        <button>Edit Step @step.id</button>
+    </a>
+
+    <a asp-area="" asp-controller="gitgud" asp-action="deletestepconf" asp-route-stepID="@step.id">
+        <button>delete Step @step.id</button>
+    </a>
 }
+
+    <a asp-area="" asp-controller="gitgud" asp-action="addmessageform">
+        <button>Send Message to Poster</button>
+    </a>

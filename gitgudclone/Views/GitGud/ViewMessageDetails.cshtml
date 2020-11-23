@@ -5,3 +5,7 @@
 <a asp-area="" asp-controller="gitgud" asp-action="deletemessageconf" asp-route-messageID = "@Model.id">
     <button>Delete Message</button>
 </a>
+
+<a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail">
+    <button>Reply</button>
+</a>

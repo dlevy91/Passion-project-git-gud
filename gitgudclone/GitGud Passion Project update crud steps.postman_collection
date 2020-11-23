@@ -1,0 +1,469 @@
+{
+	"info": {
+		"_postman_id": "86b0eb72-27f0-430c-afda-d6aef2df352e",
+		"name": "GitGud Passion Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Display",
+			"item": [
+				{
+					"name": "ViewPost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/gitgud/viewposts",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"viewposts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ViewPostDetails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "postID",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/viewpostdetails",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"viewpostdetails"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "AddPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "How to make pasta",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/addpost",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"addpost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/editpost",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"editpost"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePost",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/deletepost",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"deletepost"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "ViewMessage",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/gitgud/viewmessages",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"viewmessages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ViewMessageDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/gitgud/viewmessagedetails",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"viewmessagedetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/addmessage",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"addmessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMessage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/deletemessage",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"deletemessage"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "ViewNotifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/gitgud/viewnotifications",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"viewnotifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ViewNotificationDetails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:5001/gitgud/viewnotificationdetails",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"viewnotificationdetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNotification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/addnotif",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"addnotif"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteNotification",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/deletenotif",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"deletenotif"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Steps",
+			"item": [
+				{
+					"name": "Add step",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "postID",
+									"value": "9",
+									"type": "text"
+								},
+								{
+									"key": "step",
+									"value": "wet your drys part 2",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"value": "https://www.jessicagavin.com/wp-content/uploads/2020/07/how-to-cook-pasta-2-600x900.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/addstep",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"addstep"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Step",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "stepID",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"value": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Mama_instant_noodle_block.jpg/1200px-Mama_instant_noodle_block.jpg",
+									"type": "text"
+								},
+								{
+									"key": "step",
+									"value": "Open your drys",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/editstep",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"editstep"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Step",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "stepID",
+									"value": "3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://localhost:5001/gitgud/deletestep",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"gitgud",
+								"deletestep"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,8 +1,14 @@
 @model gitgudclone.Data.ApplicationDbContext
 
+
 @foreach (MessagesModel message in @Model.messagesList)
 {
+    @if(message.recipientEmail == User.Identity.Name)
+    {
     <a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">
     <partial name = "_messagesDisplay" model = "@message"/>
     </a>
+    }
 }
+    
+    
