@@ -27,6 +27,6 @@
     </a>
 }
 
-    <a asp-area="" asp-controller="gitgud" asp-action="addmessageform">
+    <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
         <button>Send Message to Poster</button>
     </a>

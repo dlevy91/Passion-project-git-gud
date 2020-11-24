@@ -60,7 +60,7 @@ namespace Passion_project_git_gud.Controllers
         }
 
         [Authorize(Roles = "admin, user")]
-        public IActionResult AddPostForm()
+        public IActionResult AddPostForm(string userEmail)
         {
             return View();
         }

@@ -221,6 +221,9 @@ namespace gitgudclone.Migrations
                     b.Property<int?>("UserModelid")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("isRead")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("recipientEmail")
                         .HasColumnType("TEXT");
 
@@ -277,6 +280,9 @@ namespace gitgudclone.Migrations
 
                     b.Property<string>("title")
                         .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("userEmail")
                         .HasColumnType("TEXT");
 
                     b.HasKey("id");

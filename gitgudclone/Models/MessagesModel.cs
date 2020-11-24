@@ -14,5 +14,7 @@ namespace gitgudclone.Models
 
         [Required]
         public string textBody {get; set;}
+
+        public bool isRead {get; set;}
     }
 }

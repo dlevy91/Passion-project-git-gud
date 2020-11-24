@@ -175,6 +175,7 @@ namespace gitgudclone.Migrations
                     userEmail = table.Column<string>(type: "TEXT", nullable: true),
                     recipientEmail = table.Column<string>(type: "TEXT", nullable: true),
                     textBody = table.Column<string>(type: "TEXT", nullable: false),
+                    isRead = table.Column<bool>(type: "INTEGER", nullable: false),
                     UserModelid = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -216,6 +217,7 @@ namespace gitgudclone.Migrations
                 {
                     id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    userEmail = table.Column<string>(type: "TEXT", nullable: true),
                     title = table.Column<string>(type: "TEXT", nullable: false),
                     isApproved = table.Column<bool>(type: "INTEGER", nullable: false),
                     UserModelid = table.Column<int>(type: "INTEGER", nullable: true)

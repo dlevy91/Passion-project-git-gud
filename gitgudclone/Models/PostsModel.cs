@@ -10,6 +10,8 @@ namespace gitgudclone.Models
         [Key]
         public int id {get; set;}
 
+        public string userEmail {get; set;}
+
         [Required]
         public string title {get; set;}
 
