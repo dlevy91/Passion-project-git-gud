@@ -1,7 +1,6 @@
 @model gitgudclone.Data.ApplicationDbContext
 
-@* @if(@Model.messagesList.Count > 0) *@
-@* { *@
+
     @foreach (NotificationsModel notif in @Model.notificationsList)
     {
         
@@ -9,4 +8,3 @@
         <partial name = "_notificationsDisplay" model = "@notif"/>
         </a>
     }
-@* } *@

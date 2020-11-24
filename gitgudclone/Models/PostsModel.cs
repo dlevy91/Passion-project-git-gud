@@ -16,10 +16,6 @@ namespace gitgudclone.Models
         // [NotMapped]
         public List<StepsModel> postSteps {get; set;}
 
-        // public ICollection<StepsModel> postBody {get; set;}
-
-        // public string postBody {get; set;}
-
         public bool isApproved {get; set;}
     }
 

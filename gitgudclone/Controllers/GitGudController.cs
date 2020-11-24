@@ -42,26 +42,24 @@ namespace Passion_project_git_gud.Controllers
 ////////////////////////////////////////////////////////////////////////////////////////////
 
         //=====================Add=============================
-
+        [Authorize(Roles = "admin, user")]
         [HttpPost]
         public IActionResult AddPost(PostsModel newPost)
         {
             // return Content("Add Post");
-            // if(ModelState.IsValid)
-            // {
-            
+            if(ModelState.IsValid)
+            {
             _context.postsList.Add(newPost);
             _context.SaveChanges();
-
-
             return RedirectToAction("AddStepForm", new {postID = newPost.id});
             // return Content("Post Created");
-            // }
-            // else{
-            //     return Content("Not Valid");
-            // }
+            }
+            else{
+                return Content("Not Valid");
+            }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult AddPostForm()
         {
             return View();
@@ -70,7 +68,8 @@ namespace Passion_project_git_gud.Controllers
 ////////////////////////////////////////////////////////////////////////////////////////////
 
         //=====================Edit=============================
-
+        
+        [Authorize(Roles = "admin, user")]
         [HttpPost]
         public IActionResult EditPost(PostsModel upPost)
         {
@@ -89,6 +88,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult EditPostForm(int postID)
         {
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
@@ -105,6 +105,7 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Delete=============================
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeletePostConf(int postID)
         {
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == postID);
@@ -117,6 +118,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeletePost(int postID)
         {
             // return Content("Delete Post");
@@ -137,6 +139,7 @@ namespace Passion_project_git_gud.Controllers
 ////////////////////////////////////////////////////////////////////////////////////////////
         //========================Steps=============================
 
+        [Authorize(Roles = "admin, user")]
         [HttpPost]
         public IActionResult AddStep(StepsModel newStep, int postID)
         {
@@ -154,6 +157,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult AddStepForm(int postID)
         {
             ViewData["postID"] = postID;
@@ -162,6 +166,7 @@ namespace Passion_project_git_gud.Controllers
 
         //========================Edit==============================
 
+        [Authorize(Roles = "admin, user")]
         [HttpPost]
         public IActionResult EditStep(StepsModel upStep)
         {
@@ -180,6 +185,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult EditStepForm(int stepID)
         {
             StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
@@ -195,6 +201,7 @@ namespace Passion_project_git_gud.Controllers
 
         //========================Delete==============================
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeleteStep(int stepID)
         {
             StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
@@ -211,6 +218,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeleteStepConf(int stepID)
         {
             StepsModel foundStep = _context.stepsList.FirstOrDefault(s => s.id == stepID);
@@ -226,12 +234,14 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Messages=============================
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult ViewMessages()
         {
             // return Content("View Messages");
             return View(_context);
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult ViewMessageDetails(int messageID)
         {
             // return Content("ViewMessageDetails");
@@ -242,22 +252,24 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Add=============================
 
+        [Authorize(Roles = "admin, user")]
         [HttpPost]
         public IActionResult AddMessage(MessagesModel newMessage)
         {
             // return Content("Add Message");
-            // if(ModelState.IsValid)
-            // {
+            if(ModelState.IsValid)
+            {
             _context.messagesList.Add(newMessage);
             _context.SaveChanges();
             return RedirectToAction("ViewMessages");
-            // }
-            // else{
-            //    return Content("Not valid Message");
-            // }
+            }
+            else{
+               return Content("Not valid Message");
+            }
         }
 
-        public IActionResult AddMessageForm()
+        [Authorize(Roles = "admin, user")]
+        public IActionResult AddMessageForm(string recipientEmail, string userEmail)
         {
             return View();
         }
@@ -265,6 +277,7 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Delete=============================
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeleteMessageConf(int messageID)
         {
             MessagesModel foundMessage = _context.messagesList.FirstOrDefault(m => m.id == messageID);
@@ -277,6 +290,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeleteMessage(int messageID)
         {
             // return Content("Delete Message");
@@ -295,12 +309,14 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Notifications=============================
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult ViewNotifications()
         {
             // return Content("ViewNotifications");
             return View(_context);
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult ViewNotificationDetails(int notifID)
         {
             // return Content("View Notification Details");
@@ -311,20 +327,22 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Add=============================
 
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public IActionResult AddNotif(NotificationsModel newNotification)
         {
-            // if(ModelState.IsValid)
-            // {
+            if(ModelState.IsValid)
+            {
             _context.notificationsList.Add(newNotification);
             _context.SaveChanges();
             return RedirectToAction("ViewNotifications");
-            // }
-            // else{
-            //    return Content("Not valid Notification");
-            // }
+            }
+            else{
+               return Content("Not valid Notification");
+            }
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult AddNotifForm()
         {
             return View();
@@ -333,6 +351,7 @@ namespace Passion_project_git_gud.Controllers
 
         //=====================Delete=============================
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeleteNotifConf(int notifID)
         {
             NotificationsModel foundNotif = _context.notificationsList.FirstOrDefault(n => n.id == notifID);
@@ -345,6 +364,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
+        [Authorize(Roles = "admin, user")]
         public IActionResult DeleteNotif(int notifID)
         {
             // return Content("Delete Notification");

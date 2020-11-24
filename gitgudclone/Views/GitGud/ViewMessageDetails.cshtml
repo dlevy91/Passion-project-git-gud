@@ -6,6 +6,6 @@
     <button>Delete Message</button>
 </a>
 
-<a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail">
+<a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@Model.recipientEmail">
     <button>Reply</button>
 </a>
