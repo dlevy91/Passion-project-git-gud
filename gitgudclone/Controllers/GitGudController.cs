@@ -237,7 +237,6 @@ namespace Passion_project_git_gud.Controllers
         [Authorize(Roles = "admin, user")]
         public IActionResult ViewMessages()
         {
-            // return Content("View Messages");
             return View(_context);
         }
 
