@@ -246,6 +246,11 @@ namespace Passion_project_git_gud.Controllers
         {
             // return Content("ViewMessageDetails");
             MessagesModel foundMessage = _context.messagesList.FirstOrDefault(m => m.id == messageID);
+
+            foundMessage.isRead = true;
+
+            _context.SaveChanges();
+
             return View(foundMessage);
         }
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -272,7 +277,7 @@ namespace Passion_project_git_gud.Controllers
         public IActionResult AddMessageForm(string recipientEmail, string userEmail)
         {
             return View();
-        }
+        } 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
         //=====================Delete=============================
