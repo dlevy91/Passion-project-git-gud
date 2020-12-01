@@ -174,6 +174,8 @@ namespace gitgudclone.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     userEmail = table.Column<string>(type: "TEXT", nullable: true),
                     recipientEmail = table.Column<string>(type: "TEXT", nullable: true),
+                    messageDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    subjectLine = table.Column<string>(type: "TEXT", nullable: false),
                     textBody = table.Column<string>(type: "TEXT", nullable: false),
                     isRead = table.Column<bool>(type: "INTEGER", nullable: false),
                     UserModelid = table.Column<int>(type: "INTEGER", nullable: true)

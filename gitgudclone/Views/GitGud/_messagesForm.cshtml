@@ -11,6 +11,12 @@
 </div>
 
 <div class = "form-group">
+    @Html.LabelFor(m => m.subjectLine)
+    @Html.TextBoxFor(m => m.subjectLine, new{@class = "form-control"})
+    @Html.ValidationMessageFor(m => m.subjectLine)
+</div>
+
+<div class = "form-group">
     @Html.LabelFor(m => m.textBody)
     @Html.TextBoxFor(m => m.textBody, new{@class = "form-control"})
     @Html.ValidationMessageFor(m => m.textBody)

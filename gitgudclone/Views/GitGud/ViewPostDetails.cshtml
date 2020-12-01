@@ -4,29 +4,34 @@
 
 <partial name="_postsDisplay" model="@Model" />
 
-<a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
-    <button>Edit Title</button>
-</a>
-
-<a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
-    <button>Delete Post</button>
-</a>
-
-<a asp-area="" asp-controller="gitgud" asp-action="addstepform" asp-route-postID="@Model.id">
-    <button>Add Step</button>
-</a>
-
-@foreach (StepsModel step in @Model.postSteps)
-{
-    <a asp-area="" asp-controller="gitgud" asp-action="editstepform" asp-route-stepID="@step.id">
-        <button>Edit Step @step.id</button>
+@* @if(User.Identity.ToString() == @Model.userEmail)
+{ *@
+    <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
+        <button>Edit Title</button>
     </a>
 
-    <a asp-area="" asp-controller="gitgud" asp-action="deletestepconf" asp-route-stepID="@step.id">
-        <button>delete Step @step.id</button>
+    <a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
+        <button>Delete Post</button>
     </a>
-}
 
+    <a asp-area="" asp-controller="gitgud" asp-action="addstepform" asp-route-postID="@Model.id">
+        <button>Add Step</button>
+    </a>
+
+    @foreach (StepsModel step in @Model.postSteps)
+    {
+        <a asp-area="" asp-controller="gitgud" asp-action="editstepform" asp-route-stepID="@step.id">
+            <button>Edit Step @step.id</button>
+        </a>
+
+        <a asp-area="" asp-controller="gitgud" asp-action="deletestepconf" asp-route-stepID="@step.id">
+            <button>delete Step @step.id</button>
+        </a>
+    }
+@* }
+else{ *@
     <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
         <button>Send Message to Poster</button>
     </a>
+@* } *@
+    

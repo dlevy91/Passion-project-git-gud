@@ -1,12 +1,15 @@
 @model gitgudclone.Data.ApplicationDbContext
 
+@* TODO - Update list to iterate backwards so new messages appear first *@
+
 <h1>Unread Messages</h1>
 <table class="table table-dark">
   <thead>
     <tr>
       <th scope="col">Status</th>
+      <th scope="col">Time</th>
       <th scope="col">From</th>
-      <th scope="col">Body</th>
+      <th scope="col">Subject</th>
     </tr>
   </thead>
     <tbody>
@@ -17,7 +20,6 @@
           <tr>
             @if(message.isRead == false)
             {
-  @* FIX ME: currently only able to create link if text in row is surrounded by anchor tag instead of whole row *@
               <th scope="row">
               @if(@message.isRead == false)
               {
@@ -28,9 +30,11 @@
               }
               </th>
 
+              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.messageDate</a></td>
+
               <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.userEmail</a></td>
 
-              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.textBody</a></td>
+              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.subjectLine</a></td>
               }
           </tr>
         }
@@ -44,9 +48,9 @@
   <thead>
     <tr>
       <th scope="col">Status</th>
+      <th scope="col">Time</th>
       <th scope="col">From</th>
-      <th scope="col">Body</th>
-    </tr>
+      <th scope="col">Subject</th>
   </thead>
     <tbody>
       @foreach (MessagesModel message in @Model.messagesList)
@@ -56,7 +60,6 @@
           <tr>
             @if(message.isRead == true)
             {
-  @* FIX ME: currently only able to create link if text in row is surrounded by anchor tag instead of whole row *@
               <th scope="row">
               @if(@message.isRead == false)
               {
@@ -67,9 +70,11 @@
               }
               </th>
 
+              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.messageDate</a></td>
+
               <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.userEmail</a></td>
 
-              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.textBody</a></td>
+              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.subjectLine</a></td>
               }
           </tr>
         }

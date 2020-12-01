@@ -12,6 +12,11 @@ namespace gitgudclone.Models
 
         public string recipientEmail {get; set;}
 
+        public DateTime messageDate {get; set;}
+
+        [Required]
+        public string subjectLine {get; set;}
+
         [Required]
         public string textBody {get; set;}
 

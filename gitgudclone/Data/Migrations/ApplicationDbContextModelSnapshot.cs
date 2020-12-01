@@ -224,7 +224,14 @@ namespace gitgudclone.Migrations
                     b.Property<bool>("isRead")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("messageDate")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("recipientEmail")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("subjectLine")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("textBody")

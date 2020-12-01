@@ -9,7 +9,7 @@ using gitgudclone.Data;
 namespace gitgudclone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201124201627_init")]
+    [Migration("20201201140920_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -226,7 +226,14 @@ namespace gitgudclone.Migrations
                     b.Property<bool>("isRead")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("messageDate")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("recipientEmail")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("subjectLine")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("textBody")

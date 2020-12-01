@@ -263,6 +263,7 @@ namespace Passion_project_git_gud.Controllers
             // return Content("Add Message");
             if(ModelState.IsValid)
             {
+            newMessage.messageDate = DateTime.Now;
             _context.messagesList.Add(newMessage);
             _context.SaveChanges();
             return RedirectToAction("ViewMessages");
