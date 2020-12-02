@@ -11,6 +11,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using gitgudclone.Data;
 using gitgudclone.Models;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using System.IO;
 
 namespace Passion_project_git_gud.Controllers
 {
@@ -384,6 +389,29 @@ namespace Passion_project_git_gud.Controllers
             else{
                return Content("Notification not found");
             }
+        }
+
+//================================================================================================================================================
+        public IActionResult Pdf()
+        {
+            MemoryStream ms = new MemoryStream();
+            
+            PdfWriter writer = new PdfWriter(ms);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            Paragraph header = new Paragraph("HEADER")
+                .SetTextAlignment(TextAlignment.CENTER)
+                .SetFontSize(20);
+
+            document.Add(header);
+            document.Close();
+
+            byte[] bytesStream = ms.ToArray();
+            ms = new MemoryStream();
+            ms.Write(bytesStream, 0, bytesStream.Length);
+            ms.Position = 0;
+
+            return new FileStreamResult(ms,"application/pdf");
         }
 
     }

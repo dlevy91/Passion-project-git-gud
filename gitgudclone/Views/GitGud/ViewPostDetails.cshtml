@@ -4,8 +4,8 @@
 
 <partial name="_postsDisplay" model="@Model" />
 
-@* @if(User.Identity.ToString() == @Model.userEmail)
-{ *@
+@if(User.Identity.Name == @Model.userEmail)
+{
     <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
         <button>Edit Title</button>
     </a>
@@ -25,13 +25,13 @@
         </a>
 
         <a asp-area="" asp-controller="gitgud" asp-action="deletestepconf" asp-route-stepID="@step.id">
-            <button>delete Step @step.id</button>
+            <button>Delete Step @step.id</button>
         </a>
     }
-@* }
-else{ *@
+}
+else{
     <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
         <button>Send Message to Poster</button>
     </a>
-@* } *@
+}
     

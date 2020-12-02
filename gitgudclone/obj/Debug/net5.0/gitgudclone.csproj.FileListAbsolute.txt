@@ -412,3 +412,15 @@ C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\De
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\DeletestepConf.cshtml.g.cs
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\EditStepForm.cshtml.g.cs
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\app.db
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\Common.Logging.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\Common.Logging.Core.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.barcodes.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.forms.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.io.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.kernel.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.layout.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.pdfa.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.sign.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.styledxmlparser.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.svg.dll
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\BouncyCastle.Crypto.dll
