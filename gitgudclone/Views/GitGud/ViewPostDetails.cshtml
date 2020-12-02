@@ -35,6 +35,6 @@ else{
     </a>
 }
     
-    <a asp-area="" asp-controller="gitgud" asp-action="pdf" asp-route-postID = "@Model.id">
+    <a asp-area="" asp-controller="gitgud" asp-action="pdf" asp-route-postID = "@Model.id", new { target = "_blank" })>
         <button>PDF</button>
     </a>
