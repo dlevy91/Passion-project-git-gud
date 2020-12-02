@@ -16,6 +16,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using System.IO;
+using iText.IO.Image;
 
 namespace Passion_project_git_gud.Controllers
 {
@@ -392,18 +393,39 @@ namespace Passion_project_git_gud.Controllers
         }
 
 //================================================================================================================================================
-        public IActionResult Pdf()
+        public IActionResult Pdf(int postID)
         {
+            PostsModel foundPost = _context.postsList.Include(p => p.postSteps).FirstOrDefault(p => p.id == postID);
+            
+
             MemoryStream ms = new MemoryStream();
             
             PdfWriter writer = new PdfWriter(ms);
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
-            Paragraph header = new Paragraph("HEADER")
+            Paragraph header = new Paragraph(foundPost.title)
                 .SetTextAlignment(TextAlignment.CENTER)
-                .SetFontSize(20);
+                .SetFontSize(30);
 
             document.Add(header);
+
+            foreach (StepsModel step in foundPost.postSteps)
+            {
+             Paragraph body = new Paragraph(step.step)
+                .SetTextAlignment(TextAlignment.CENTER)
+                .SetFontSize(20);   
+             String imageUrl = step.img;
+             ImageData data = ImageDataFactory.Create(imageUrl);
+             Image img = new Image(data)
+                .SetMarginLeft(130)
+                .SetMarginRight(50);
+            
+            document.Add(body);
+            document.Add(img);
+            }           
+
+            
+            
             document.Close();
 
             byte[] bytesStream = ms.ToArray();
