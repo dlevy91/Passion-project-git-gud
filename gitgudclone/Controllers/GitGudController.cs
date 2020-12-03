@@ -17,6 +17,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using System.IO;
 using iText.IO.Image;
+using iText.Kernel.Colors;
 
 namespace Passion_project_git_gud.Controllers
 {
@@ -392,7 +393,7 @@ namespace Passion_project_git_gud.Controllers
             }
         }
 
-//================================================================================================================================================
+//============================================================Create PDF function====================================================================================
         public IActionResult Pdf(int postID)
         {
             PostsModel foundPost = _context.postsList.Include(p => p.postSteps).FirstOrDefault(p => p.id == postID);
@@ -405,7 +406,9 @@ namespace Passion_project_git_gud.Controllers
             Document document = new Document(pdf);
             Paragraph header = new Paragraph(foundPost.title)
                 .SetTextAlignment(TextAlignment.CENTER)
-                .SetFontSize(30);
+                .SetFontSize(30)
+                .SetBold()
+                .SetBackgroundColor(ColorConstants.ORANGE);
 
             document.Add(header);
 
@@ -413,12 +416,15 @@ namespace Passion_project_git_gud.Controllers
             {
              Paragraph body = new Paragraph(step.step)
                 .SetTextAlignment(TextAlignment.CENTER)
-                .SetFontSize(20);   
+                .SetFontSize(20)
+                .SetBackgroundColor(ColorConstants.LIGHT_GRAY);   
              String imageUrl = step.img;
              ImageData data = ImageDataFactory.Create(imageUrl);
              Image img = new Image(data)
-                .SetMarginLeft(130)
-                .SetMarginRight(50);
+                .SetMarginLeft(100)
+                .SetMarginRight(100)
+                .SetWidth(200)
+                .SetAutoScaleHeight(true);
             
             document.Add(body);
             document.Add(img);
@@ -433,6 +439,7 @@ namespace Passion_project_git_gud.Controllers
             ms.Write(bytesStream, 0, bytesStream.Length);
             ms.Position = 0;
 
+            //TODO update what is returned to display post title in tab instead of "pdf"
             return new FileStreamResult(ms,"application/pdf");
         }
 
