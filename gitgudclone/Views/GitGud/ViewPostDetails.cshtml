@@ -1,40 +1,66 @@
 @model gitgudclone.Models.PostsModel
 
-<h1>Post Details</h1>
-
-<partial name="_postsDisplay" model="@Model" />
+<h1 id="textColor">Tutorial Details</h1>
 
 @if(User.Identity.Name == @Model.userEmail)
 {
     <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
-        <button>Edit Title</button>
+        <button class="btn btn-outline-warning">Edit Title</button>
     </a>
 
     <a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
-        <button>Delete Post</button>
+        <button class="btn btn-outline-danger">Delete Post</button>
     </a>
 
     <a asp-area="" asp-controller="gitgud" asp-action="addstepform" asp-route-postID="@Model.id">
-        <button>Add Step</button>
+        <button type="button" class="btn btn-outline-info">Add Step</button>
     </a>
-
-    @foreach (StepsModel step in @Model.postSteps)
-    {
-        <a asp-area="" asp-controller="gitgud" asp-action="editstepform" asp-route-stepID="@step.id">
-            <button>Edit Step @step.id</button>
-        </a>
-
-        <a asp-area="" asp-controller="gitgud" asp-action="deletestepconf" asp-route-stepID="@step.id">
-            <button>Delete Step @step.id</button>
-        </a>
-    }
 }
 else{
     <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
-        <button>Send Message to Poster</button>
+        <button class="btn btn-outline-light">Send Message to Poster</button>
     </a>
 }
     
     <a asp-area="" asp-controller="gitgud" asp-action="pdf" asp-route-postID = "@Model.id", new { target = "_blank" })>
-        <button>Open PDF</button>
+        <button class="btn btn-outline-primary">Open PDF</button>
     </a>
+
+<div class="card text-white bg-dark mb3 card text-center style"width: 75rem;">
+    <div class="card-body">
+        <p id="id" class="card-title"><h2>@Model.title</h2></p>
+    </div>
+</div>
+
+
+            <ol id="id" class = "card-title">
+                @foreach (StepsModel step in @Model.postSteps)
+                {
+                    <div class="card text-white bg-dark mb3 card text-center style"width: 80rem;">
+                        <div class="card-body">
+                <li>
+                            <h6>@step.step</h6>
+                            @if (step.img != null)
+                            {
+                                <p><img src=@step.img width="500px" alt="step.img"/></p>
+
+                            }
+                </li>
+                        </div>
+                    </div>
+                    @if(User.Identity.Name == @Model.userEmail)
+                    {
+                    <a asp-area="" asp-controller="gitgud" asp-action="editstepform" asp-route-stepID="@step.id">
+                        <button class="btn btn-outline-warning">Edit Step</button>
+                    </a>
+
+                    <a asp-area="" asp-controller="gitgud" asp-action="deletestepconf" asp-route-stepID="@step.id">
+                        <button class="btn btn-outline-danger">Delete Step</button>
+                    </a>
+                    }
+                }
+            </ol>
+
+        
+
+
