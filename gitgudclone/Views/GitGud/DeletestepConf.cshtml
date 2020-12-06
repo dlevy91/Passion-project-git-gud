@@ -1,7 +1,18 @@
 @model gitgudclone.Models.StepsModel
 
-<h1>Do you wish to delete step @Model.step?</h1>
+<div class="jumbotron">
+  <h1 class="display-4">Do you wish to delete step @Model.step?</h1>
+  <hr class="my-4">
+  <p>Once deleted it will be gone forever</p>
+  <p class="lead">
+    <a asp-area="" asp-controller="gitgud" asp-action="deletestep" asp-route-stepID="@Model.id">
+    <button class="btn btn-outline-danger">Delete</button>
+    </a>
 
-<a asp-area="" asp-controller="gitgud" asp-action="deletestep" asp-route-stepID="@Model.id">
-<button>Delete</button>
-</a>
+
+
+    <a asp-area="" asp-controller="gitgud" asp-action="viewpostdetails" asp-route-postID="@Model.postID">
+    <button class="btn btn-outline-info">Go Back</button>
+    </a>
+  </p>
+</div>

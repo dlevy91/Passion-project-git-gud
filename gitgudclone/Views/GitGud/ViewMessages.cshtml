@@ -2,8 +2,8 @@
 
 @* TODO - Update list to iterate backwards so new messages appear first *@
 
-<h1>Unread Messages</h1>
-<table class="table table-dark">
+<h1 id="textColor">Unread Messages</h1>
+<table id="tableBackground" class="table">
   <thead>
     <tr>
       <th scope="col">Status</th>
@@ -23,7 +23,7 @@
               <th scope="row">
               @if(@message.isRead == false)
               {
-                <span>Unread</span>
+                <span id="unread">Unread</span>
               }
               else{
                 <span>Read</span>
@@ -43,8 +43,8 @@
 </table>    
 @* =================================================================================================================== *@
 
-<h1>Read Messages</h1>
-<table class="table table-dark">
+<h1 id="textColor">Read Messages</h1>
+<table id="tableBackground" class="table">
   <thead>
     <tr>
       <th scope="col">Status</th>

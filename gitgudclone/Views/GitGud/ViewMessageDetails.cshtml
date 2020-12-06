@@ -3,9 +3,9 @@
 <partial name = "_messagesDisplay" model = "@Model"/>
 
 <a asp-area="" asp-controller="gitgud" asp-action="deletemessageconf" asp-route-messageID = "@Model.id">
-    <button>Delete Message</button>
+    <button id="buttonSpace" class="btn btn-outline-danger">Delete</button>
 </a>
 
 <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@Model.recipientEmail">
-    <button>Reply</button>
+    <button id="buttonSpace" class="btn btn-outline-success">Reply</button>
 </a>

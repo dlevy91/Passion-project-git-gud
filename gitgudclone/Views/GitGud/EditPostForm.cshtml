@@ -1,6 +1,6 @@
 @model gitgudclone.Models.PostsModel
 
-<h1>Edit post</h1>
+<h1 id="textColor">Edit post</h1>
 
 @using (@Html.BeginForm("editPost", "gitgud"))
 {
@@ -9,5 +9,5 @@
         @Html.HiddenFor(p => p.id)
     </div>
 
-    <button type = "submit">Submit</button>
+    <button class="btn btn-outline-success" type = "submit">Submit</button>
 }

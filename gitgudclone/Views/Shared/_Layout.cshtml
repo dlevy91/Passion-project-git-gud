@@ -28,16 +28,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewmessages">View Messages</a>
-                            </li>                    
-                            @* <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewnotifications">View Notifications</a>
-                            </li>     
-                                @if(User.IsInRole("admin"))
-                                {
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="addnotifform">Add Notification</a>
-                                </li>   
-                                } *@
+                            </li>                           
                         }
                         else if(User.IsInRole("user"))
                         {
@@ -49,10 +40,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewmessages">View Messages</a>
-                            </li>                      
-                            @* <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewnotifications">View Notifications</a>
-                            </li>   *@
+                            </li>                     
                         }
                         else{
                             <li class="nav-item">
@@ -73,6 +61,8 @@
 
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

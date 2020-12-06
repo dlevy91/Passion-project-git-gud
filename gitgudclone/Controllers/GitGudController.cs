@@ -156,8 +156,7 @@ namespace Passion_project_git_gud.Controllers
             foundPost.postSteps.Add(newStep);
             _context.SaveChanges();
 
-            return RedirectToAction("ViewPosts");
-            // return Content("Step Added");
+            return RedirectToAction("AddStepForm", new {postID = foundPost.id});
             }
             else{
                 return Content("Post not found!");

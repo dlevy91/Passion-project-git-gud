@@ -24,6 +24,10 @@ a {
   border-color: #1861ac;
 }
 
+.nav-item{
+  color: black;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -41,6 +45,7 @@ html {
 }
 .border-bottom {
   border-bottom: 1px solid #D8572A;
+  padding: 1%;
 }
 
 .box-shadow {
@@ -76,8 +81,9 @@ body {
  ------------------------------------------------ */
 
  #navbarColor{
-   background-color: #D8572A;
+   background-color: #6DB1BF;
    border: black 10% solid;
+   margin-bottom: 1%;
  }
 
  #textColor{
@@ -86,4 +92,38 @@ body {
 
  ol{
    padding-left: 0px;
+ }
+
+ #titleID{
+  color: black;
+  background-color: #a0a0a0;
+  border-radius: 2%;
+  margin-bottom: 1%;
+ }
+
+ #id{
+   color: #000000;
+   background-color: #a0a0a0;
+   border-radius: 2%;
+ }
+
+ #tableBackground{
+   background-color: #9c9c9c;
+ }
+
+ #unread{
+   color: red;
+ }
+
+ #buttonSpace{
+   margin-top: 1%;
+   margin-bottom: 1%;
+ }
+
+ li{
+   color: #000000;
+ }
+
+ div{
+   color: #A38560;
  }

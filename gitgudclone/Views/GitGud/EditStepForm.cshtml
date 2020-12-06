@@ -1,6 +1,6 @@
 @model gitgudclone.Models.StepsModel
 
-<h1>Edit step</h1>
+<h1 id="textColor">Edit step</h1>
 
 @using (@Html.BeginForm("EditStep", "gitgud"))
 {
@@ -9,5 +9,5 @@
         @Html.HiddenFor(s => s.id)
     </div>
 
-    <button type = "submit">Submit</button>
+    <button class="btn btn-outline-success" type = "submit">Submit</button>
 }

@@ -1,9 +1,11 @@
 @model gitgudclone.Models.MessagesModel
 
-<div class="card text-white bg-dark mb3 " style="width: 18rem;">
-    <div class="card-body">
-    <p id = "id" class="card-title">To: @Model.recipientEmail</p>
-    <p class="card-text">From: @Model.userEmail</p>
-    <p class="card-text">Message: @Model.textBody</p>
+<div id="id" class="card text-white bg-dark mb3 card text-center style"width: 25rem;>
+    <div id="id" class="card-body">
+    <p class="card-title"><h6>To:</h6> @Model.recipientEmail</p>
+    <p class="card-text"><h6>From:</h6> @Model.userEmail</p>
+    <p class="card-text"><h6>Message:</h6> 
+        <p>@Model.textBody</p>
+    </p>
     </div>
 </div>

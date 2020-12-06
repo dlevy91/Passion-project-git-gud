@@ -1,11 +1,10 @@
 @model gitgudclone.Models.PostsModel
 
 <div class = "form-group">
-    @Html.LabelFor(p => p.userEmail)
-    @Html.TextBoxFor(p => p.userEmail, new{@readonly="readonly"})
+    @Html.HiddenFor(p => p.userEmail)
 </div>
 
-<div class = "form-group">
+<div id="textColor" class = "form-group">
     @Html.LabelFor(p => p.title)
     @Html.TextBoxFor(p => p.title, new{@class = "form-control"})
     @Html.ValidationMessageFor(p => p.title)

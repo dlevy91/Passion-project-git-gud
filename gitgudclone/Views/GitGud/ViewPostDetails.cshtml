@@ -2,47 +2,72 @@
 
 <h1 id="textColor">Tutorial Details</h1>
 
-@if(User.Identity.Name == @Model.userEmail)
+@if(User.IsInRole("admin"))
 {
-    <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
-        <button class="btn btn-outline-warning">Edit Title</button>
-    </a>
+    @if(User.Identity.Name == @Model.userEmail)
+    {
+        <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
+            <button id="buttonSpace" class="btn btn-outline-warning">Edit Title</button>
+        </a>
 
-    <a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
-        <button class="btn btn-outline-danger">Delete Post</button>
-    </a>
+        <a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
+            <button id="buttonSpace" class="btn btn-outline-danger">Delete Post</button>
+        </a>
 
-    <a asp-area="" asp-controller="gitgud" asp-action="addstepform" asp-route-postID="@Model.id">
-        <button type="button" class="btn btn-outline-info">Add Step</button>
-    </a>
+        <a asp-area="" asp-controller="gitgud" asp-action="addstepform" asp-route-postID="@Model.id">
+            <button id="buttonSpace" type="button" class="btn btn-outline-info">Add Step</button>
+        </a>
+    }
+    else{
+        <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
+            <button id="buttonSpace" class="btn btn-outline-light">Send Message to Poster</button>
+        </a>
+    }
 }
-else{
-    <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
-        <button class="btn btn-outline-light">Send Message to Poster</button>
-    </a>
+else if(User.IsInRole("user"))
+{
+    @if(User.Identity.Name == @Model.userEmail)
+    {
+        <a asp-area="" asp-controller="gitgud" asp-action="editpostform" asp-route-postID="@Model.id">
+            <button id="buttonSpace" class="btn btn-outline-warning">Edit Title</button>
+        </a>
+
+        <a asp-area="" asp-controller="gitgud" asp-action="deletePostconf" asp-route-postID="@Model.id">
+            <button id="buttonSpace" class="btn btn-outline-danger">Delete Post</button>
+        </a>
+
+        <a asp-area="" asp-controller="gitgud" asp-action="addstepform" asp-route-postID="@Model.id">
+            <button id="buttonSpace" type="button" class="btn btn-outline-info">Add Step</button>
+        </a>
+    }
+    else{
+        <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
+            <button id="buttonSpace" class="btn btn-outline-light">Send Message to Poster</button>
+        </a>
+    }    
 }
     
     <a asp-area="" asp-controller="gitgud" asp-action="pdf" asp-route-postID = "@Model.id", new { target = "_blank" })>
-        <button class="btn btn-outline-primary">Open PDF</button>
+        <button id="buttonSpace" class="btn btn-outline-primary">Open PDF</button>
     </a>
 
-<div class="card text-white bg-dark mb3 card text-center style"width: 75rem;">
-    <div class="card-body">
-        <p id="id" class="card-title"><h2>@Model.title</h2></p>
+<div id="id" class="card text-white bg-dark mb3 card text-center style"width: 25rem;">
+    <div  id="titleID" class="card-body">
+        <p id="id" class="card-title"><h2 id="id" >@Model.title</h2></p>
     </div>
 </div>
 
 
-            <ol id="id" class = "card-title">
+            <ol class = "card-title">
                 @foreach (StepsModel step in @Model.postSteps)
                 {
-                    <div class="card text-white bg-dark mb3 card text-center style"width: 80rem;">
-                        <div class="card-body">
-                <li>
-                            <h6>@step.step</h6>
+                    <div id="id" class="card text-white bg-dark mb3 card text-center style"width: 80rem;">
+                        <div  id="id" lass="card-body">
+                <li id="id" >
+                            <h6 id="id">@step.step</h6>
                             @if (step.img != null)
                             {
-                                <p><img src=@step.img width="500px" alt="step.img"/></p>
+                                <p><img src=@step.img width="300rem" alt="step.img"/></p>
 
                             }
                 </li>
@@ -51,11 +76,11 @@ else{
                     @if(User.Identity.Name == @Model.userEmail)
                     {
                     <a asp-area="" asp-controller="gitgud" asp-action="editstepform" asp-route-stepID="@step.id">
-                        <button class="btn btn-outline-warning">Edit Step</button>
+                        <button id="buttonSpace" class="btn btn-outline-warning">Edit Step</button>
                     </a>
 
                     <a asp-area="" asp-controller="gitgud" asp-action="deletestepconf" asp-route-stepID="@step.id">
-                        <button class="btn btn-outline-danger">Delete Step</button>
+                        <button id="buttonSpace" class="btn btn-outline-danger">Delete Step</button>
                     </a>
                     }
                 }

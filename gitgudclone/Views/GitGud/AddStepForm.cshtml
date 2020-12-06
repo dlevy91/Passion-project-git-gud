@@ -1,13 +1,16 @@
 @model gitgudclone.Models.StepsModel
 
-<h1>Add new step</h1>
-
-@ViewData["postID"]
+<h1 id="textColor">Add new step</h1>
+<h6 id="textColor">Do not click Finished until all steps have been added.</h6>
 
 @using (@Html.BeginForm("addStep", "gitgud"))
 {
     <partial name = "_stepForm" model = "@Model"/>
 
-    <button type = "submit">Add Step</button>
+    <button class="btn btn-outline-info" type = "submit">Add New Step</button>
 }
 
+@* TODO currently you have to click add new step to submit. Will update Finished button to add and redirect to viewPosts *@
+    <a asp-area="" asp-controller="gitgud" asp-action="viewposts">
+        <button id="buttonSpace" class="btn btn-outline-success">Finished</button>
+    </a>

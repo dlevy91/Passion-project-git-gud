@@ -1,23 +1,22 @@
 @model gitgudclone.Models.MessagesModel
 
-<div class = "form-group">
-    @Html.LabelFor(m => m.userEmail)
-    @Html.TextBoxFor(m => m.userEmail, new{@readonly="readonly"})
+<div id="textColor" class = "form-group">
+    @Html.HiddenFor(m => m.userEmail)
 </div>
 
-<div class = "form-group">
+<div id="textColor" class = "form-group">
     @Html.LabelFor(m => m.recipientEmail)
-    @Html.TextBoxFor(m => m.recipientEmail, new{@readonly="readonly"})
+    @Html.TextBoxFor(m => m.recipientEmail, new{@readonly="readonly", @class = "form-control"})
 </div>
 
-<div class = "form-group">
+<div id="textColor" class = "form-group">
     @Html.LabelFor(m => m.subjectLine)
     @Html.TextBoxFor(m => m.subjectLine, new{@class = "form-control"})
     @Html.ValidationMessageFor(m => m.subjectLine)
 </div>
 
-<div class = "form-group">
+<div id="textColor" class = "form-group">
     @Html.LabelFor(m => m.textBody)
-    @Html.TextBoxFor(m => m.textBody, new{@class = "form-control"})
+    @Html.TextAreaFor(m => m.textBody, new{@class = "form-control"})
     @Html.ValidationMessageFor(m => m.textBody)
 </div>
