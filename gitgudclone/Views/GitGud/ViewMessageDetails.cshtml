@@ -1,5 +1,7 @@
 @model gitgudclone.Models.MessagesModel
 
+<title>@ViewData["Title"] GitGud - Message Details</title>
+
 <partial name = "_messagesDisplay" model = "@Model"/>
 
 <a asp-area="" asp-controller="gitgud" asp-action="deletemessageconf" asp-route-messageID = "@Model.id">
