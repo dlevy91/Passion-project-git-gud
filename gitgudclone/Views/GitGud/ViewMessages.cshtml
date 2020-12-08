@@ -10,8 +10,8 @@
     <tr>
       <th scope="col">Status</th>
       <th scope="col">Time</th>
-      <th scope="col">From</th>
       <th scope="col">Subject</th>
+      <th scope="col">From</th>
     </tr>
   </thead>
     <tbody>
@@ -32,11 +32,11 @@
               }
               </th>
 
-              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.messageDate</a></td>
-
-              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.userEmail</a></td>
+              <td>@message.messageDate</td>
 
               <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.subjectLine</a></td>
+
+              <td>@message.userEmail</td>
               }
           </tr>
         }
@@ -51,8 +51,8 @@
     <tr>
       <th scope="col">Status</th>
       <th scope="col">Time</th>
-      <th scope="col">From</th>
       <th scope="col">Subject</th>
+      <th scope="col">From</th>
   </thead>
     <tbody>
       @foreach (MessagesModel message in @Model.messagesList)
@@ -72,11 +72,11 @@
               }
               </th>
 
-              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.messageDate</a></td>
-
-              <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.userEmail</a></td>
+              <td>@message.messageDate</td>
 
               <td><a asp-area="" asp-controller="gitgud" asp-action="viewmessagedetails" asp-route-messageID = "@message.id">@message.subjectLine</a></td>
+
+              <td>@message.userEmail</td>
               }
           </tr>
         }

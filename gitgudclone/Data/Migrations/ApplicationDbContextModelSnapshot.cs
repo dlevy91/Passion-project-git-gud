@@ -227,6 +227,9 @@ namespace gitgudclone.Migrations
                     b.Property<DateTime>("messageDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("postTitle")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("recipientEmail")
                         .HasColumnType("TEXT");
 

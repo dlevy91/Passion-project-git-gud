@@ -10,6 +10,11 @@
 </div>
 
 <div id="textColor" class = "form-group">
+    @Html.LabelFor(m => m.postTitle)
+    @Html.TextBoxFor(m => m.postTitle, new{@readonly="readonly", @class = "form-control"})
+</div>
+
+<div id="textColor" class = "form-group">
     @Html.LabelFor(m => m.subjectLine)
     @Html.TextBoxFor(m => m.subjectLine, new{@class = "form-control"})
     @Html.ValidationMessageFor(m => m.subjectLine)

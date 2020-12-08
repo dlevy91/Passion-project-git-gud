@@ -85,6 +85,7 @@ namespace Passion_project_git_gud.Controllers
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == upPost.id);
             if(foundPost != null)
             {
+            foundPost.title = foundPost.title;
             foundPost.postSteps = upPost.postSteps;
             foundPost.isApproved = upPost.isApproved;
             _context.SaveChanges();
@@ -280,7 +281,7 @@ namespace Passion_project_git_gud.Controllers
         }
 
         [Authorize(Roles = "admin, user")]
-        public IActionResult AddMessageForm(string recipientEmail, string userEmail)
+        public IActionResult AddMessageForm(string recipientEmail, string userEmail, string postTitle, string subjectLine)
         {
             return View();
         } 

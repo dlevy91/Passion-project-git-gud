@@ -44,10 +44,10 @@
                         else if(User.IsInRole("user"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewposts">View Posts</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewposts">View Tutorials</a>
                             </li>
                           <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="addpostform" asp-route-userEmail = "@User.Identity.Name">Add Post</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="addpostform" asp-route-userEmail = "@User.Identity.Name">Add Tutorial</a>
                             </li>
 
                             @* foreach (MessagesModel message in @Model.messagesList)
@@ -66,7 +66,7 @@
                         }
                         else{
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewposts">View Posts</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="gitgud" asp-action="viewposts">View Tutorial</a>
                             </li>
                         }
                     </ul>

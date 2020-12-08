@@ -21,7 +21,7 @@
         </a>
     }
     else{
-        <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
+        <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name" asp-route-postTitle = "@Model.title">
             <button id="buttonSpace" class="btn btn-outline-light">Send Message to Poster</button>
         </a>
     }
@@ -43,7 +43,7 @@ else if(User.IsInRole("user"))
         </a>
     }
     else{
-        <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name">
+        <a asp-area="" asp-controller="gitgud" asp-action="addmessageform" asp-route-recipientEmail = "@Model.userEmail" asp-route-userEmail = "@User.Identity.Name" asp-route-postTitle = "@Model.title">
             <button id="buttonSpace" class="btn btn-outline-light">Send Message to Poster</button>
         </a>
     }    
@@ -65,14 +65,14 @@ else if(User.IsInRole("user"))
                 {
                     <div id="id" class="card text-white bg-dark mb3 card text-center style"width: 80rem;">
                         <div  id="id" lass="card-body">
-                <li id="id" >
-                            <h6 id="id">@step.step</h6>
-                            @if (step.img != null)
-                            {
-                                <p><img src=@step.img width="300rem" alt="step.img"/></p>
+                            <li id="liId" >
+                                <h6 id="id">@step.step</h6>
+                                @if (step.img != null)
+                                {
+                                    <p><img src=@step.img width="300rem" alt="step.img"/></p>
 
-                            }
-                </li>
+                                }
+                            </li>
                         </div>
                     </div>
                     @if(User.Identity.Name == @Model.userEmail)

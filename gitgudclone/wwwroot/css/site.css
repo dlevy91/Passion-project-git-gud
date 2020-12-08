@@ -97,14 +97,14 @@ body {
  #titleID{
   color: black;
   background-color: #a0a0a0;
-  border-radius: 2%;
+  border-radius: 5px;
   margin-bottom: 1%;
  }
 
  #id{
    color: #000000;
    background-color: #a0a0a0;
-   border-radius: 2%;
+   border-radius: 5px;
  }
 
  #tableBackground{
@@ -120,8 +120,8 @@ body {
    margin-bottom: 1%;
  }
 
- li{
-   color: #000000;
+ #liId{
+   color: #a0a0a0;
  }
 
  div{

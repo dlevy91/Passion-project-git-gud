@@ -14,6 +14,9 @@ namespace gitgudclone.Models
         [Display(Name = "Recipient Email")]
         public string recipientEmail {get; set;}
 
+        [Display(Name = "Post")]
+        public string postTitle {get; set;}
+
         [Display(Name = "Message Date")]
         public DateTime messageDate {get; set;}
 
