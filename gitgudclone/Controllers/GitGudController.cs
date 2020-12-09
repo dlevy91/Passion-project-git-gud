@@ -46,6 +46,12 @@ namespace Passion_project_git_gud.Controllers
             return View(foundPost);
             // return Content($"{foundPost.title} and {foundPost.postBody}");
         }
+
+        public IActionResult ViewUserPosts()
+        {
+            List<PostsModel> foundPosts = _context.postsList.Include(p => p.postSteps).ToList();
+            return View(_context);
+        }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
         //=====================Add=============================
@@ -85,7 +91,7 @@ namespace Passion_project_git_gud.Controllers
             PostsModel foundPost = _context.postsList.FirstOrDefault(p => p.id == upPost.id);
             if(foundPost != null)
             {
-            foundPost.title = foundPost.title;
+            foundPost.title = upPost.title;
             foundPost.postSteps = upPost.postSteps;
             foundPost.isApproved = upPost.isApproved;
             _context.SaveChanges();

@@ -15703,6 +15703,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\ViewUserPosts.cshtml",
+      "TargetPath": "Views\\GitGud\\ViewUserPosts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\student\\Code_School\\Projects\\Passion-project-git-gud\\gitgudclone\\Views\\GitGud\\AddNotifForm.cshtml",
       "TargetPath": "Views\\GitGud\\AddNotifForm.cshtml",
       "FileKind": "mvc"

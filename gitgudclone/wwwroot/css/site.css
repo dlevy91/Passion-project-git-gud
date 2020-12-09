@@ -127,3 +127,16 @@ body {
  div{
    color: #A38560;
  }
+
+ #msgBack{
+   background-color: black;
+   color: #ffffff;
+ }
+
+ a{
+   color: #ffffff;
+ }
+
+ a:hover {
+  color: yellow;
+}

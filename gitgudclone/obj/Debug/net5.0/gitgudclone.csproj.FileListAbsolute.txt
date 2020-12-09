@@ -424,3 +424,4 @@ C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\De
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\itext.svg.dll
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\BouncyCastle.Crypto.dll
 C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\bin\Debug\net5.0\app.db
+C:\Users\student\Code_School\Projects\Passion-project-git-gud\gitgudclone\obj\Debug\net5.0\Razor\Views\GitGud\ViewUserPosts.cshtml.g.cs

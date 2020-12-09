@@ -1,0 +1,14 @@
+@model gitgudclone.Data.ApplicationDbContext
+
+<title>@ViewData["Title"] GitGud - Users Tutorials</title>
+
+<div class="card-columns">
+    @foreach (PostsModel post in @Model.postsList)
+    {
+        if(User.Identity.Name == @post.userEmail){
+        <a asp-area="" asp-controller="gitgud" asp-action="viewpostdetails" asp-route-postID="@post.id">
+            <partial name="_postsDisplay" model="@post" />
+        </a>
+        }
+    }
+</div>

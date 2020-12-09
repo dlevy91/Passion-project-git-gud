@@ -2,10 +2,11 @@
 
 <div id="id" class="card text-white bg-dark mb3 card text-center style"width: 25rem;>
     <div id="id" class="card-body">
-    <p class="card-title"><h6 id="msgBack">Post Reference:</h6> @Model.postTitle</p>
-    <p class="card-text"><h6 id="msgBack">From:</h6> @Model.userEmail</p>
+    <p class="card-title"><h6 id="msgBack">Subject:</h6> <span id="msgTxt">@Model.subjectLine</span></p>
+    <p class="card-text"><h6 id="msgBack">From:</h6> <span id="msgTxt">@Model.userEmail</span></p>
+    <p class="card-title"><h6 id="msgBack">Post Reference:</h6> <span id="msgTxt">@Model.postTitle</span></p>
     <p class="card-text"><h6 id="msgBack">Message:</h6> 
-        <p>@Model.textBody</p>
+        <p><span id="msgTxt">@Model.textBody</span></p>
     </p>
     </div>
 </div>
