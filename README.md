@@ -1,7 +1,7 @@
 # <i>Requirements Doc</i>
 
 # Project Summary
-This project is a way for users to share information that they want to with other users. Each user can submit their own ideas with step by step instructions and photos on how to do said thing. Users can also message the OP to get clarification if they don't understand a step, they can also search posts based on project title or tags that the OP used when making their post. Admin will approve posts and if anything is off they will mark it as a "needs to be revised" before it gets posted to the public.
+This project is a way for users to share information that they want to with other users. Each user can submit their own ideas with step by step instructions and photos on how to do said thing. Users can also message the OP to get clarification if they don't understand a step. Users are also able to generate a PDF of the tutorial they are looking at and download it to their device.
 
 # Logins for testing
 fyrbrd129@hotmail.com P@ssw0rd
