@@ -2,11 +2,11 @@
 
 <title>@ViewData["Title"] GitGud - Add Tutorial Title</title>
 
-<h1 id="textColor">Add new post</h1>
+<h1 id="textColor">Add new Tutorial</h1>
 
 @using (@Html.BeginForm("addPost", "gitgud"))
 {
     <partial name = "_postsForm" model = "@Model"/>
 
-    <button class="btn btn-outline-success" type = "submit">Add Post</button>
+    <button class="btn btn-outline-success" type = "submit">Add Tutorial</button>
 }
