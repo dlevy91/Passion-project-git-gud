@@ -1,9 +1,78 @@
-# <i>Passion-Project-Git-Gud</i>
+# <i>Requirements Doc</i>
 
-# TODO List for the week
+# Project Summary
+This project is a way for users to share information that they want to with other users. Each user can submit their own ideas with step by step instructions and photos on how to do said thing. Users can also message the OP to get clarification if they don't understand a step. Users are also able to generate a PDF of the tutorial they are looking at and download it to their device.
 
+# Logins for testing
+fyrbrd129@hotmail.com P@ssw0rd
+
+riggins.n@gmail.com P@ssw0rd
+
+# Models
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">User</th>
+      <td>int ID</td>
+      <td>string User Email</td>
+      <td>string User screen name</td>
+      <td>string User Posts</td>
+      <td>list User Favorites </td>
+      <td>list User Messages </td>
+      <td>list User Notifications </td>
+    </tr>
+    <tr>
+      <th scope="row">Messages</th>
+      <td>int ID</td>
+      <td>string User Email</td>
+      <td>string Recipient Email</td>
+      <td>string text body</td>   
+    </tr>
+    <tr>
+      <th scope="row">Notifications</th>
+      <td>int ID</td>
+      <td>string User Email</td>
+      <td>bool isUrgent</td>  
+      <td>string notification text</td>
+    </tr>    
+       <tr>
+      <th scope="row">Posts</th>
+      <td>int ID</td>
+      <td>string title</td>
+      <td>list postSteps</td>  
+      <td>bool isApproved</td>
+    </tr>  
+      <tr>
+      <th scope="row">Steps</th>
+      <td>int ID</td>
+      <td>string step</td>
+      <td>string img</td>  
+      <td>int postID</td>
+    </tr>  
+  </tbody>
+</table>
+
+# Admin
 <ul>
-  <li>Functionality for messages</li>
-  <li>Functionality for notifications</li>
-  <li>Create search function</li>
+    <li>Admin must approve a post before it is published</li>
+    <li>Admin should be able to access posts by any user and delete or "hide" post if it is deemed offensive/dangerous and give user a chance to fix it</li>
 </ul>
+
+# User
+<ul>
+    <li>Users should be able to log in and have access to links to create, edit, and delete a post</li>
+    <li>When making a new post users should be able to click "add body" button to create a new text box</li>
+    <li>Users should be able to include images into post so that it shows in their post when submitted</li>
+    <li>Users should be able to search for a post based on tags that the post creator entered or post title</li>
+    <li>Users should be able to export an entry as a PDF to Google Drive through use of an API</li>
+    <li>Users should be able to direct message another user if they have a question about any portion of a post and be notified when they recieve a message back</li>
+    <li>If users post is flagged should get a warning and told they need to update their post</li>
+</ul>
+
+# Link to Google doc API
+https://developers.google.com/drive/api/v3/quickstart/dotnet
