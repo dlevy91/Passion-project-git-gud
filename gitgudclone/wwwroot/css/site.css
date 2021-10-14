@@ -87,7 +87,7 @@ body {
  }
 
  #textColor{
-   color: #A38560;
+   color: #ffffff;
  }
 
  ol{
@@ -112,7 +112,7 @@ body {
  }
 
  #unread{
-   color: red;
+   /* color: rgb(229, 245, 9); */
  }
 
  #buttonSpace{
@@ -125,7 +125,7 @@ body {
  }
 
  div{
-   color: #A38560;
+   color: #ffffff;
  }
 
  #msgBack{
@@ -135,6 +135,7 @@ body {
 
  a{
    color: #ffffff;
+   text-decoration: underline;
  }
 
  a:hover {

@@ -47,13 +47,13 @@
 
 
 <table id="tableBackground" class="table">
-  <thead>
+  @* <thead>
     <tr>
       <th scope="col">Status</th>
       <th scope="col">Time</th>
       <th scope="col">Subject</th>
       <th scope="col">From</th>
-  </thead>
+  </thead> *@
     <tbody>
       @foreach (MessagesModel message in @Model.messagesList)
       {
@@ -62,7 +62,7 @@
           <tr>
             @if(message.isRead == true)
             {
-              <th scope="row">
+              <td scope="row">
               @if(@message.isRead == false)
               {
                 <span>Unread</span>
@@ -70,7 +70,7 @@
               else{
                 <span>Read</span>
               }
-              </th>
+              </td>
 
               <td>@message.messageDate</td>
 

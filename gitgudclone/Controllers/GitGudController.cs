@@ -50,7 +50,7 @@ namespace Passion_project_git_gud.Controllers
         public IActionResult ViewUserPosts()
         {
             List<PostsModel> foundPosts = _context.postsList.Include(p => p.postSteps).ToList();
-            return View(_context);
+            return View(_context); 
         }
 ////////////////////////////////////////////////////////////////////////////////////////////
 
